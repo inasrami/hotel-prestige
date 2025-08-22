@@ -2,15 +2,15 @@
   <div>
     <section class="page-header">
       <div class="page-header-content">
-        <h1>Exceptional service tailored to your every need</h1>
+        <h1 data-aos="zoom-out">Exceptional service tailored to your every need</h1>
       </div>
     </section>
     <ServicesGrid />
-    <section class="cta-section">
+    <section class="cta-section bg-gradient-to-r from-bone to-darkbone">
       <div class="cta-content">
         <h2>Ready to Experience Luxury?</h2>
         <p>Book your stay and discover the exceptional service that sets Hotel Prestige apart.</p>
-        <button class="btn-gold btn-large">Book Your Stay</button>
+        <button class="btn-gold btn-large text-white">Book Your Stay</button>
       </div>
     </section>
   </div>
@@ -32,7 +32,6 @@ export default {
 
 <style scoped>
 .page-header {
-  background: #75642dd5;
   color: white;
   padding: 120px 0 80px;
   text-align: center;
@@ -49,13 +48,21 @@ export default {
   right: 0;
   bottom: 0;
   background: url('/images/hotelroom.jpg') center/cover;
-  opacity: 0.3;
+  z-index: 0;
+  filter: brightness(0.6) blur(2px);
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.36);
   z-index: 1;
 }
 
 .page-header-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
@@ -70,8 +77,7 @@ export default {
 }
 
 .cta-section {
-  background: #adadad;
-  color: white;
+  color: hsl(0, 1%, 25%);
   padding: 80px 0;
   text-align: center;
   margin-top: 80px;
@@ -112,16 +118,15 @@ export default {
 }
 
 .btn-gold {
-  background-color: #d4af37;
-  color: #fff;
-  border: 2px solid #d4af37;
+  background-color: var(--gold);
+  border: 2px solid var(--gold);
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .btn-gold:hover {
-  background-color: #b89527;
-  border-color: #b89527;
+  background-color: var(--darkgold);
+  border-color: var(--darkgold);
 }
 </style>

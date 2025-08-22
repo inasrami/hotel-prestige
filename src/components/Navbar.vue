@@ -1,13 +1,13 @@
 <template>
   <nav
-    class="flex justify-between items-center px-8 py-2 bg-white shadow-md sticky top-0 z-50 rounded-xl"
+    class="flex justify-between items-center px-8 py-1 bg-white shadow-md sticky top-0 z-50 rounded-xl"
   >
     <img src="/images/logo.png" alt="Hotel Logo" class="h-12" />
     <ul class="hidden md:flex gap-8 font-semibold">
       <li><router-link to="/" class="hover:text-gold">Home</router-link></li>
       <li><a href="#rooms" class="hover:text-gold">Rooms</a></li>
       <li><router-link to="/services" class="hover:text-gold">Services</router-link></li>
-      <li><a href="#contact" class="hover:text-gold">Contact</a></li>
+      <li><router-link to="/contact" class="hover:text-gold">Contact</router-link></li>
     </ul>
     <div class="flex gap-4">
       <button

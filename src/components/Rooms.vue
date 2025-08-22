@@ -1,11 +1,13 @@
 <template>
-  <section id="rooms" class="py-20 text-center bg-white w-4/5 mx-auto">
+  <section id="rooms" class="py-20 text-center bg-cream w-4/5 mx-auto">
     <h2 class="text-3xl font-serif mb-12">Our Rooms</h2>
     <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
       <div
+        data-aos="fade-up"
+        data-aos-duration="3000"
         v-for="room in rooms"
         :key="room.title"
-        class="relative bg-stone-100 backdrop-blur-sm rounded-xl shadow-md overflow-hidden"
+        class="relative bg-white backdrop-blur-sm rounded-xl shadow-md overflow-hidden"
       >
         <img
           :src="room.image"

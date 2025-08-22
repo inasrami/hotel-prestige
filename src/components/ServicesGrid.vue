@@ -1,8 +1,13 @@
 <template>
-  <section class="py-20 text-center bg-white">
+  <section class="py-20 text-center">
     <h2 class="text-3xl font-serif mb-12">Our Services</h2>
     <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
-      <div v-for="s in services" :key="s.title" class="p-6 rounded-xl shadow-md bg-white">
+      <div
+        data-aos="flip-left"
+        v-for="s in services"
+        :key="s.title"
+        class="p-6 rounded-xl shadow-md bg-white"
+      >
         <span class="material-symbols-outlined text-5xl text-gold">{{ s.icon }}</span>
         <h3 class="text-xl font-serif mt-4">{{ s.title }}</h3>
         <p class="text-gray-600">{{ s.desc }}</p>

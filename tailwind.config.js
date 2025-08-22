@@ -6,6 +6,9 @@ export default {
       colors: {
         gold: '#d4af37',
         darkgold: '#b89527',
+        bone: '#dedbbd',
+        darkbone: '#c7c4a9',
+        cream: '#fffbe9',
       },
     },
   },

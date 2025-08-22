@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans bg-[#fffbe9] text-gray-800 min-h-screen">
+  <div class="font-sans bg-cream text-gray-800 min-h-screen">
     <Navbar />
     <router-view />
     <Footer />

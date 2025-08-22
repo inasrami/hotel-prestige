@@ -23,7 +23,7 @@
         <div class="space-y-2 text-gray-400">
           <p>support@hotelprestige.com</p>
           <p>+383 44 444 444</p>
-          <p>Shatervan, Prizren</p>
+          <a href="./#contact"><p>Shatervan, Prizren</p></a>
         </div>
       </div>
 
