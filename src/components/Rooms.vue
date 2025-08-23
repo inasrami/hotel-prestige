@@ -17,7 +17,7 @@
         <h3 class="text-xl font-serif mt-4">{{ room.title }}</h3>
         <p class="text-gray-600 px-4 py-2 mb-14">{{ room.desc }}</p>
         <button
-          class="w-full py-3 absolute bottom-0 left-0 bg-gold text-white hover:bg-darkgold transition rounded-xl"
+          class="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-[95%] py-3 bg-gold text-white hover:bg-darkgold transition rounded-xl"
         >
           Book Now
         </button>

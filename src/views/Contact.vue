@@ -4,7 +4,7 @@
     style="background-image: url('/images/hotelroom.jpg')"
   ></div> -->
   <div class="min-h-screen relative z-10 grid place-items-center p-6">
-    <div class="w-full max-w-lg bg-stone-100 rounded-2xl shadow-xl p-8">
+    <div class="w-full max-w-lg bg-gray-900 rounded-2xl shadow-xl p-8">
       <h2 class="text-2xl font-bold text-gold mb-6 text-center">Contact Us</h2>
 
       <form @submit.prevent="submitForm" class="space-y-5">
@@ -16,7 +16,7 @@
             type="text"
             id="name"
             placeholder="Enter your name"
-            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-gold focus:outline-none transition"
+            class="w-full px-4 py-3 border rounded-xl bg-gray-600 focus:ring-2 focus:ring-gold focus:outline-none transition"
             required
           />
         </div>
@@ -29,7 +29,7 @@
             type="email"
             id="email"
             placeholder="Enter your email"
-            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-gold focus:outline-none transition"
+            class="w-full px-4 py-3 border rounded-xl bg-gray-600 focus:ring-2 focus:ring-gold focus:outline-none transition"
             required
           />
         </div>
@@ -42,7 +42,7 @@
             id="message"
             rows="4"
             placeholder="Write your message..."
-            class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-gold focus:outline-none transition resize-none"
+            class="w-full px-4 py-3 border rounded-xl bg-gray-600 focus:ring-2 focus:ring-gold focus:outline-none transition resize-none"
             required
           ></textarea>
         </div>

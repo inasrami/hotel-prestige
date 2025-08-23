@@ -10,11 +10,13 @@
         <h4 class="font-serif text-xl text-gold mb-4">Links</h4>
         <ul class="space-y-2">
           <li><router-link to="/" class="hover:text-white transition">Home</router-link></li>
-          <li><a href="#rooms" class="hover:text-white transition">Rooms</a></li>
+          <li v-if="route.path === '/'">
+            <a href="#rooms" class="hover:text-white transition">Rooms</a>
+          </li>
           <li>
             <router-link to="/services" class="hover:text-white transition">Services</router-link>
           </li>
-          <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+          <li><a href="/contact" class="hover:text-white transition">Contact</a></li>
         </ul>
       </div>
 
@@ -46,3 +48,9 @@
     </div>
   </footer>
 </template>
+<script setup>
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+</script>

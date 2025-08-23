@@ -10,12 +10,20 @@
       <div class="cta-content">
         <h2>Ready to Experience Luxury?</h2>
         <p>Book your stay and discover the exceptional service that sets Hotel Prestige apart.</p>
-        <button class="btn-gold btn-large text-white">Book Your Stay</button>
+        <button @click="goToBooking" class="btn-gold btn-large text-white">Book Your Stay</button>
       </div>
     </section>
   </div>
 </template>
+<script setup>
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
+
+function goToBooking() {
+  router.push('/bookingpage')
+}
+</script>
 <script>
 import Navbar from '../components/Navbar.vue'
 import ServicesGrid from '../components/ServicesGrid.vue'
