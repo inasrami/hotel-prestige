@@ -63,6 +63,7 @@
                 View Details
               </button>
               <button
+                @click="goToBooking"
                 class="flex-1 py-3 px-4 bg-dark_moss_green-400/50 text-white rounded-lg hover:bg-dark_moss_green-500/50 transition-colors font-medium"
               >
                 Book Now
@@ -76,92 +77,34 @@
 </template>
 
 <script setup>
-const rooms = [
-  {
-    title: 'Ocean Suite',
-    price: 450,
-    description: 'Luxurious oceanfront suite with panoramic views and private balcony',
-    image: '/images/room2.jpg',
-    bestValue: true,
-    amenities: [
-      { name: 'King Size Bed', icon: '🛏️' },
-      { name: '2 Guests', icon: '👥' },
-      { name: 'Ocean View', icon: '🌊' },
-      { name: 'Free WiFi', icon: '📶' },
-    ],
-    tags: ['King Bed', 'Ocean View', 'Private Balcony', 'Marble Bathroom'],
-  },
-  {
-    title: 'Presidential Villa',
-    price: 850,
-    description: 'Ultimate luxury with private pool and dedicated butler service',
-    image: '/images/room3.jpg',
-    bestValue: true,
-    amenities: [
-      { name: '2 Bedrooms', icon: '🛏️' },
-      { name: '4 Guests', icon: '👥' },
-      { name: 'Private Pool', icon: '🏊' },
-      { name: 'Butler Service', icon: '🎩' },
-    ],
-    tags: ['2 Bedrooms', 'Private Pool', 'Butler Service', 'Kitchen'],
-  },
-  {
-    title: 'Garden Villa',
-    price: 320,
-    description: 'Serene garden setting with modern amenities and spa access',
-    image: '/images/room4.jpg',
-    bestValue: true,
-    amenities: [
-      { name: 'Queen Size Bed', icon: '🛏️' },
-      { name: '2 Guests', icon: '👥' },
-      { name: 'Valet Parking', icon: '🚗' },
-      { name: 'Garden View', icon: '🌿' },
-    ],
-    tags: ['Queen Bed', 'Garden View'],
-  },
-  {
-    title: 'Executive Suite',
-    price: 380,
-    description: 'Spacious suite with premium amenities and city views',
-    image: '/images/room5.jpg',
-    bestValue: false,
-    amenities: [
-      { name: 'King Size Bed', icon: '🛏️' },
-      { name: '2 Guests', icon: '👥' },
-      { name: 'City View', icon: '🏙️' },
-      { name: 'Mini Bar', icon: '🍷' },
-    ],
-    tags: ['King Bed', 'City View', 'Executive Lounge'],
-  },
-  {
-    title: 'Family Suite',
-    price: 280,
-    description: 'Perfect for families with connecting rooms and kid-friendly amenities',
-    image: '/images/room6.jpg',
-    bestValue: false,
-    amenities: [
-      { name: '2 Queen Beds', icon: '🛏️' },
-      { name: '4 Guests', icon: '👥' },
-      { name: 'Kids Area', icon: '🧸' },
-      { name: 'Kitchenette', icon: '🍳' },
-    ],
-    tags: ['Family Friendly', 'Connecting Rooms', 'Kitchenette'],
-  },
-  {
-    title: 'Penthouse Loft',
-    price: 650,
-    description: 'Rooftop luxury with contemporary design and panoramic city views',
-    image: '/images/room7.jpg',
-    bestValue: false,
-    amenities: [
-      { name: 'King Size Bed', icon: '🛏️' },
-      { name: '2 Guests', icon: '👥' },
-      { name: 'Rooftop Terrace', icon: '🏢' },
-      { name: 'Premium WiFi', icon: '📶' },
-    ],
-    tags: ['Penthouse', 'Rooftop Terrace', 'Contemporary Design'],
-  },
-]
+import { ref, onMounted } from 'vue'
+import axios from 'axios'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+
+function goToBooking() {
+  router.push('/bookingpage')
+}
+const rooms = ref([]) // reactive variable
+
+onMounted(async () => {
+  try {
+    const res = await axios.get('http://localhost:5000/rooms') // your backend URL
+    rooms.value = res.data.map((r) => ({
+      title: r.title,
+      price: r.price,
+      description: r.description,
+      image: r.image, // use the image from backend
+      bestValue: r.bestValue,
+      amenities: r.amenities,
+      tags: r.tags,
+    }))
+  } catch (err) {
+    console.error('Error fetching rooms:', err)
+  }
+})
 </script>
 
 <style scoped>
