@@ -1,5 +1,8 @@
 <template>
-  <section id="amenities" class="py-20 bg-cream text-center">
+  <section
+    id="amenities"
+    class="py-20 bg-gradient-to-bl from-slate-200 to-sky-200 text-center shadow-lg"
+  >
     <h2 class="text-3xl font-serif mb-12">Amenities</h2>
     <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
       <div
@@ -8,7 +11,9 @@
         :key="a.title"
         class="p-6 rounded-xl shadow-md bg-white"
       >
-        <span class="material-symbols-outlined text-5xl text-gold">{{ a.icon }}</span>
+        <span class="material-symbols-outlined text-5xl text-dark_moss_green-300">{{
+          a.icon
+        }}</span>
         <h3 class="text-xl font-serif mt-4">{{ a.title }}</h3>
         <p class="text-gray-600">{{ a.desc }}</p>
       </div>

@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <Hero />
+    <Hero></Hero>
     <Rooms />
     <Amenities />
     <Location />
@@ -8,6 +8,7 @@
 </template>
 
 <script setup>
+import Navbar from '../components/Navbar.vue'
 import Hero from '../components/Hero.vue'
 import Rooms from '../components/Rooms.vue'
 import Amenities from '../components/Amenities.vue'

@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gray-900 text-gray-300">
+  <footer class="bg-primary text-gray-300">
     <div class="w-4/5 mx-auto py-16 grid gap-10 grid-cols-1 md:grid-cols-4">
       <div>
         <h3 class="font-serif text-2xl text-gold mb-2">Hotel Prestige</h3>

@@ -1,20 +1,32 @@
 <template>
   <div>
+    <div class="fixed top-0 left-0 right-0 z-50 flex justify-center">
+      <Navbar class="w-full bg-white/10 text-white"></Navbar>
+    </div>
+
     <section class="page-header">
       <div class="page-header-content">
         <h1 data-aos="zoom-out">Exceptional service tailored to your every need</h1>
       </div>
     </section>
+
     <ServicesGrid />
-    <section class="cta-section bg-gradient-to-r from-bone to-darkbone">
+
+    <section class="cta-section bg-gradient-to-bl from-slate-200 to-sky-200">
       <div class="cta-content">
         <h2>Ready to Experience Luxury?</h2>
         <p>Book your stay and discover the exceptional service that sets Hotel Prestige apart.</p>
-        <button @click="goToBooking" class="btn-gold btn-large text-white">Book Your Stay</button>
+        <button
+          @click="goToBooking"
+          class="bg-dark_moss_green-400/50 rounded-md btn-large text-white"
+        >
+          Book Your Stay
+        </button>
       </div>
     </section>
   </div>
 </template>
+
 <script setup>
 import { useRouter } from 'vue-router'
 
@@ -24,6 +36,7 @@ function goToBooking() {
   router.push('/bookingpage')
 }
 </script>
+
 <script>
 import Navbar from '../components/Navbar.vue'
 import ServicesGrid from '../components/ServicesGrid.vue'

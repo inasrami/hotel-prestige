@@ -8,7 +8,9 @@
         :key="s.title"
         class="p-6 rounded-xl shadow-md bg-white"
       >
-        <span class="material-symbols-outlined text-5xl text-gold">{{ s.icon }}</span>
+        <span class="material-symbols-outlined text-5xl text-dark_moss_green-400">{{
+          s.icon
+        }}</span>
         <h3 class="text-xl font-serif mt-4">{{ s.title }}</h3>
         <p class="text-gray-600">{{ s.desc }}</p>
       </div>
@@ -17,6 +19,7 @@
 </template>
 
 <script setup>
+import Navbar from '@/components/Navbar.vue'
 const services = [
   { title: 'Room Service', desc: '24/7 dining at your doorstep.', icon: 'room_service' },
   { title: 'Airport Transfer', desc: 'Luxury pickups and drop-offs.', icon: 'airport_shuttle' },
