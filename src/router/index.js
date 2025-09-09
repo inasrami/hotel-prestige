@@ -7,7 +7,7 @@ import About from '@/views/About.vue'
 import Gallery from '@/views/Gallery.vue'
 import Dining from '@/views/Dining.vue'
 import Spa from '@/views/Spa.vue'
-import Events from '@/views/Events.vue'
+import Events from '../views/Events.vue'
 
 const routes = [
   { path: '/', component: Home },

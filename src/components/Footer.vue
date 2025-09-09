@@ -6,7 +6,6 @@
         <!-- Brand Section -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-3 mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
             <div class="w-12 h-12 bg-gradient-to-br from-sky-500 to-teal-500 rounded-xl flex items-center justify-center">
               <span class="text-white font-bold text-xl">HP</span>
             </div>
@@ -127,7 +126,6 @@
               <input
                 type="email"
                 placeholder="Your email"
-                class="flex-1 px-4 py-2 bg-gray-700 border border-gray-600 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-yellow-400"
                 class="flex-1 px-4 py-2 bg-gray-700 border border-gray-600 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:border-sky-400"
               />
               <button class="px-4 py-2 bg-gradient-to-r from-sky-500 to-teal-500 text-white rounded-r-lg hover:from-sky-600 hover:to-teal-600 transition-all duration-300">
