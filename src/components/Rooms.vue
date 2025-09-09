@@ -1,75 +1,119 @@
 <template>
-  <section id="rooms" class="py-20 bg-gradient-to-bl from-slate-100 to-sky-100">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-4xl font-serif mb-5 text-center text-gray-800">Luxury Suites & Villas</h2>
-      <p class="text-xl font-serif mb-16 text-center text-gray-800">
-        Each accommodation is thoughtfully designed to provide the ultimate in comfort, luxury, and
-        breathtaking ocean views.
-      </p>
-      <div class="grid md:grid-cols-3 gap-8">
+  <section id="rooms" class="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <!-- Header Section -->
+      <div class="text-center mb-20">
+        <div class="inline-block">
+          <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2 block">
+            Accommodations
+          </span>
+          <h2 class="text-5xl font-serif mb-6 text-gray-900 leading-tight">
+            Luxury Suites & Villas
+          </h2>
+          <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"></div>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            Each accommodation is thoughtfully designed to provide the ultimate in comfort, luxury, and breathtaking views.
+          </p>
+        </div>
+      </div>
+
+      <!-- Rooms Grid -->
+      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
         <div
           data-aos="fade-up"
-          data-aos-duration="1000"
-          v-for="room in rooms"
+          data-aos-duration="800"
+          data-aos-delay="100"
+          v-for="(room, index) in rooms"
           :key="room.title"
-          class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+          :data-aos-delay="100 * (index + 1)"
+          class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2"
         >
-          <div class="relative">
-            <img :src="room.image" :alt="room.title" class="w-full h-64 object-cover" />
+          <!-- Image Container -->
+          <div class="relative overflow-hidden">
+            <img 
+              :src="room.image" 
+              :alt="room.title" 
+              class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            
+            <!-- Best Value Badge -->
             <div
               v-if="room.bestValue"
-              class="absolute top-4 right-4 bg-yellow-400 text-gray-800 px-3 py-1 rounded-full text-sm font-medium"
+              class="absolute top-6 right-6 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
             >
-              Best Value
+              ⭐ Best Value
+            </div>
+
+            <!-- Price Overlay -->
+            <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg">
+              <div class="text-3xl font-bold text-gray-900">${{ room.price }}</div>
+              <div class="text-sm text-gray-500 font-medium">per night</div>
             </div>
           </div>
 
-          <div class="p-6">
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-2xl font-serif text-gray-800">{{ room.title }}</h3>
-              <div class="text-right">
-                <div class="text-2xl font-bold text-gray-800">${{ room.price }}</div>
-                <div class="text-sm text-gray-500">per night</div>
-              </div>
-            </div>
+          <!-- Content -->
+          <div class="p-8">
+            <h3 class="text-2xl font-serif text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors">
+              {{ room.title }}
+            </h3>
 
-            <p class="text-gray-600 mb-6 leading-relaxed">{{ room.description }}</p>
+            <p class="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+              {{ room.description }}
+            </p>
 
-            <div class="grid grid-cols-2 gap-4 mb-6">
+            <!-- Amenities Grid -->
+            <div class="grid grid-cols-2 gap-3 mb-6">
               <div
                 v-for="amenity in room.amenities"
                 :key="amenity.name"
-                class="flex items-center text-sm text-gray-600"
+                class="flex items-center text-sm text-gray-700 bg-gray-50 rounded-lg px-3 py-2"
               >
-                <span class="text-yellow-500 mr-2">{{ amenity.icon }}</span>
-                <span>{{ amenity.name }}</span>
+                <span class="text-lg mr-2">{{ amenity.icon }}</span>
+                <span class="font-medium">{{ amenity.name }}</span>
               </div>
             </div>
 
-            <div class="flex flex-wrap gap-2 mb-6">
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-8">
               <span
                 v-for="tag in room.tags"
                 :key="tag"
-                class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium"
+                class="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-xs font-semibold uppercase tracking-wide"
               >
                 {{ tag }}
               </span>
             </div>
 
+            <!-- Action Buttons -->
             <div class="flex gap-3">
               <button
-                class="flex-1 py-3 px-4 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+                class="flex-1 py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-300 font-semibold"
               >
                 View Details
               </button>
               <button
                 @click="goToBooking"
-                class="flex-1 py-3 px-4 bg-dark_moss_green-400/50 text-white rounded-lg hover:bg-dark_moss_green-500/50 transition-colors font-medium"
+                class="flex-1 py-3 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Book Now
               </button>
             </div>
           </div>
+
+          <!-- Decorative Element -->
+          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="text-center mt-20">
+        <div class="inline-block bg-white rounded-2xl shadow-lg p-8">
+          <h3 class="text-2xl font-serif text-gray-900 mb-4">Can't decide?</h3>
+          <p class="text-gray-600 mb-6">Let our concierge help you find the perfect accommodation</p>
+          <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+            Contact Concierge
+          </button>
         </div>
       </div>
     </div>
@@ -91,7 +135,7 @@ const rooms = ref([
   {
     title: "Ocean View Suite",
     price: 450,
-    description: "Luxurious suite with panoramic ocean views, private balcony, and premium amenities.",
+    description: "Luxurious suite with panoramic ocean views, private balcony, and premium amenities. Wake up to breathtaking sunrises and enjoy the sound of waves from your private sanctuary.",
     image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
     bestValue: true,
     amenities: [
@@ -105,7 +149,7 @@ const rooms = ref([
   {
     title: "Garden Villa",
     price: 380,
-    description: "Spacious villa surrounded by tropical gardens with private pool and outdoor dining area.",
+    description: "Spacious villa surrounded by tropical gardens with private pool and outdoor dining area. Perfect for families or couples seeking privacy and tranquility in a natural setting.",
     image: "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg",
     bestValue: false,
     amenities: [
@@ -119,7 +163,7 @@ const rooms = ref([
   {
     title: "Presidential Suite",
     price: 750,
-    description: "The ultimate luxury experience with butler service, private chef, and exclusive amenities.",
+    description: "The ultimate luxury experience with butler service, private chef, and exclusive amenities. Indulge in unparalleled comfort with personalized service and premium facilities.",
     image: "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg",
     bestValue: false,
     amenities: [
@@ -134,17 +178,53 @@ const rooms = ref([
 </script>
 
 <style scoped>
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for better aesthetics */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f1f5f9;
+  border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 2px;
+  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+}
+
+/* Enhanced hover effects */
+@media (hover: hover) {
+  .group:hover .absolute.inset-0 {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid.lg\\:grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+  
+  .py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
 }
 </style>
