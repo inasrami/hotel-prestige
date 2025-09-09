@@ -1,33 +1,122 @@
 <template>
-  <div>
-    <div class="fixed top-0 left-0 right-0 z-50 flex justify-center">
-      <Navbar class="w-full bg-white/10 text-white"></Navbar>
-    </div>
+  <div class="min-h-screen">
+    <!-- Navigation -->
+    <Navbar />
 
-    <section class="page-header">
-      <div class="page-header-content">
-        <h1 data-aos="zoom-out">Exceptional service tailored to your every need</h1>
+    <!-- Hero Section -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <div
+        class="absolute inset-0 bg-cover bg-center"
+        style="background-image: url('https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg')"
+      ></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
+      
+      <div class="relative z-10 text-center text-white px-6">
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <span class="inline-block px-4 py-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 rounded-full text-yellow-300 text-sm font-semibold mb-6">
+            Premium Services
+          </span>
+          <h1 class="font-serif text-6xl md:text-7xl font-bold mb-6 text-shadow-lg">
+            Exceptional <span class="text-gradient">Service</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            Tailored to your every need with uncompromising attention to detail
+          </p>
+        </div>
       </div>
     </section>
 
-    <ServicesGrid />
+    <!-- Services Grid -->
+    <section class="section-padding bg-gradient-to-br from-gray-50 to-blue-50">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <div data-aos="fade-up">
+            <h2 class="font-serif text-5xl font-bold text-gray-900 mb-6">
+              Our <span class="text-gradient">Services</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+              From personalized concierge assistance to world-class dining, every service is designed to exceed your expectations
+            </p>
+          </div>
+        </div>
 
-    <section class="cta-section bg-gradient-to-bl from-slate-200 to-sky-200">
-      <div class="cta-content">
-        <h2>Ready to Experience Luxury?</h2>
-        <p>Book your stay and discover the exceptional service that sets Hotel Prestige apart.</p>
-        <button
-          @click="goToBooking"
-          class="bg-dark_moss_green-400/50 rounded-md btn-large text-white"
-        >
-          Book Your Stay
-        </button>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            v-for="(service, index) in services"
+            :key="service.title"
+            :data-aos="'fade-up'"
+            :data-aos-delay="index * 100"
+            class="group card-elegant p-8 text-center hover:bg-gradient-to-br hover:from-yellow-50 hover:to-orange-50 transition-all duration-500"
+          >
+            <!-- Icon -->
+            <div class="relative mb-6">
+              <div class="w-20 h-20 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500">
+                <span class="text-3xl text-white">{{ service.icon }}</span>
+              </div>
+              <div class="absolute -inset-4 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+
+            <!-- Content -->
+            <h3 class="font-serif text-2xl font-semibold text-gray-900 mb-4 group-hover:text-blue-700 transition-colors">
+              {{ service.title }}
+            </h3>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              {{ service.description }}
+            </p>
+
+            <!-- Features -->
+            <div class="space-y-2">
+              <div
+                v-for="feature in service.features"
+                :key="feature"
+                class="flex items-center justify-center text-sm text-gray-500"
+              >
+                <svg class="w-4 h-4 text-blue-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {{ feature }}
+              </div>
+            </div>
+
+            <!-- Hover Effect -->
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-400/5 to-purple-400/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 text-white">
+      <div class="container-custom text-center">
+        <div data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="font-serif text-5xl font-bold mb-6">
+            Ready to Experience <span class="text-gradient">Luxury?</span>
+          </h2>
+          <p class="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Book your stay and discover the exceptional service that sets Hotel Prestige apart from the rest
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
+              @click="goToBooking"
+              class="btn-primary text-lg px-10 py-4"
+            >
+              Book Your Stay
+            </button>
+            <router-link
+              to="/contact"
+              class="btn-secondary text-lg px-10 py-4 bg-transparent border-white text-white hover:bg-white hover:text-gray-900"
+            >
+              Contact Us
+            </router-link>
+          </div>
+        </div>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
+import Navbar from '../components/Navbar.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
@@ -35,119 +124,43 @@ const router = useRouter()
 function goToBooking() {
   router.push('/bookingpage')
 }
-</script>
 
-<script>
-import Navbar from '../components/Navbar.vue'
-import ServicesGrid from '../components/ServicesGrid.vue'
-import Footer from '../components/Footer.vue'
-
-export default {
-  components: {
-    Navbar,
-    ServicesGrid,
-    Footer,
+const services = [
+  {
+    title: '24/7 Room Service',
+    description: 'Gourmet dining delivered to your door at any hour, featuring our signature dishes and international cuisine.',
+    icon: '🛎️',
+    features: ['24/7 Availability', 'Gourmet Menu', 'In-Room Dining', 'Special Dietary Options']
   },
-}
+  {
+    title: 'Luxury Transportation',
+    description: 'Premium airport transfers and city tours in our fleet of luxury vehicles with professional chauffeurs.',
+    icon: '🚗',
+    features: ['Airport Transfers', 'City Tours', 'Luxury Vehicles', 'Professional Chauffeurs']
+  },
+  {
+    title: 'Event Planning',
+    description: 'From intimate gatherings to grand celebrations, our expert team creates unforgettable experiences.',
+    icon: '🎉',
+    features: ['Wedding Planning', 'Corporate Events', 'Private Parties', 'Custom Catering']
+  },
+  {
+    title: 'Spa & Wellness',
+    description: 'Rejuvenate your body and mind with our comprehensive spa treatments and wellness programs.',
+    icon: '💆‍♀️',
+    features: ['Massage Therapy', 'Facial Treatments', 'Wellness Programs', 'Fitness Training']
+  },
+  {
+    title: 'Concierge Services',
+    description: 'Our knowledgeable concierge team assists with reservations, recommendations, and special requests.',
+    icon: '🗝️',
+    features: ['Restaurant Reservations', 'Tour Booking', 'Ticket Services', 'Personal Shopping']
+  },
+  {
+    title: 'Laundry & Valet',
+    description: 'Professional laundry, dry cleaning, and valet services to keep you looking your best.',
+    icon: '👔',
+    features: ['Same-Day Service', 'Dry Cleaning', 'Pressing', 'Shoe Shine']
+  }
+]
 </script>
-
-<style scoped>
-.page-header {
-  color: white;
-  padding: 120px 0 80px;
-  text-align: center;
-  overflow: hidden;
-  display: grid;
-  position: relative;
-}
-
-.page-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('/images/hotelroom.jpg') center/cover;
-  z-index: 0;
-  filter: brightness(0.6) blur(2px);
-}
-
-.page-header::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.36);
-  z-index: 1;
-}
-
-.page-header-content {
-  position: relative;
-  z-index: 3;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.page-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.cta-section {
-  color: hsl(0, 1%, 25%);
-  padding: 80px 0;
-  text-align: center;
-  margin-top: 80px;
-}
-
-.cta-content {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.cta-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.cta-section p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin-bottom: 40px;
-  line-height: 1.6;
-}
-
-.btn-large {
-  padding: 18px 40px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.btn-large:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-}
-
-.btn-gold {
-  background-color: var(--gold);
-  border: 2px solid var(--gold);
-  border-radius: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-gold:hover {
-  background-color: var(--darkgold);
-  border-color: var(--darkgold);
-}
-</style>
