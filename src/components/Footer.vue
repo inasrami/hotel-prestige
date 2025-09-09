@@ -69,7 +69,7 @@
               >
                 <span class="w-1 h-1 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 Services
-              </a>
+              </router-link>
             </li>
             <li>
               <router-link 
@@ -78,7 +78,7 @@
               >
                 <span class="w-1 h-1 bg-yellow-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 Contact
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
