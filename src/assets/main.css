@@ -4,15 +4,16 @@
 @tailwind utilities;
 
 :root {
-  --primary: #1a1a2e;
-  --secondary: #16213e;
-  --accent: #0f3460;
-  --gold: #d4af37;
-  --gold-light: #f4e4a6;
-  --cream: #faf8f3;
-  --text-primary: #1a1a2e;
-  --text-secondary: #6b7280;
-  --text-light: #9ca3af;
+  --primary: #0f172a;
+  --secondary: #1e293b;
+  --accent: #0ea5e9;
+  --accent-dark: #0284c7;
+  --teal: #14b8a6;
+  --teal-dark: #0d9488;
+  --cream: #fefefe;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --text-light: #94a3b8;
 }
 
 * {
@@ -47,12 +48,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--gold), #b8941f);
+  background: linear-gradient(to bottom, var(--accent), var(--teal));
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #b8941f, var(--gold));
+  background: linear-gradient(to bottom, var(--accent-dark), var(--teal-dark));
 }
 
 /* Focus styles */
@@ -62,7 +63,7 @@ input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
   border-radius: 8px;
 }
 
@@ -74,18 +75,18 @@ select:focus {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--gold), #f4e4a6);
+  background: linear-gradient(135deg, var(--accent), var(--teal));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-yellow-700 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  @apply bg-gradient-to-r from-sky-600 to-teal-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-sky-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
 }
 
 .btn-secondary {
-  @apply border-2 border-yellow-600 text-yellow-600 px-8 py-3 rounded-xl font-semibold hover:bg-yellow-600 hover:text-white transition-all duration-300;
+  @apply border-2 border-sky-600 text-sky-600 px-8 py-3 rounded-xl font-semibold hover:bg-sky-600 hover:text-white transition-all duration-300;
 }
 
 .section-padding {
@@ -138,15 +139,15 @@ select:focus {
 
 /* Gradient backgrounds */
 .bg-luxury {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
 }
 
 .bg-elegant {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
 }
 
 .bg-premium {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
 }
 
 /* Text shadows for better readability on images */
@@ -171,4 +172,26 @@ select:focus {
   .text-3xl {
     font-size: 1.75rem;
   }
+}
+
+/* Loading spinner */
+.spinner {
+  @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* Notification styles */
+.notification {
+  @apply fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transform transition-all duration-300;
+}
+
+.notification.success {
+  @apply bg-green-500 text-white;
+}
+
+.notification.error {
+  @apply bg-red-500 text-white;
+}
+
+.notification.info {
+  @apply bg-blue-500 text-white;
 }

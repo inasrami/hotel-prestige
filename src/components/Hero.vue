@@ -18,7 +18,7 @@
       <div class="max-w-5xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="1000">
           <span class="inline-block px-4 py-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 rounded-full text-yellow-300 text-sm font-semibold mb-6">
-            ✨ Welcome to Luxury
+            ✨ Welcome to Prestige
           </span>
           
           <h1 class="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight text-shadow-lg">
@@ -62,7 +62,7 @@
               <input
                 v-model="checkIn"
                 type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-yellow-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
               />
             </div>
 
@@ -71,7 +71,7 @@
               <input
                 v-model="checkOut"
                 type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-yellow-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
               />
             </div>
 
@@ -82,7 +82,7 @@
                 type="number"
                 min="1"
                 max="8"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-yellow-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
               />
             </div>
 
@@ -90,7 +90,7 @@
               <label class="block text-white text-sm font-medium">Room Type</label>
               <select
                 v-model="room"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus:border-yellow-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
               >
                 <option value="" class="text-gray-900">Select Room</option>
                 <option value="Ocean View Suite" class="text-gray-900">Ocean View Suite</option>
@@ -103,7 +103,7 @@
               <button
                 type="button"
                 @click="handleBooking"
-                class="w-full bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                class="w-full bg-gradient-to-r from-sky-500 to-teal-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-sky-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Check Availability
               </button>
