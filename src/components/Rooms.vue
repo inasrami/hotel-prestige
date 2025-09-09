@@ -77,8 +77,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { ref } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
@@ -87,24 +86,51 @@ const route = useRoute()
 function goToBooking() {
   router.push('/bookingpage')
 }
-const rooms = ref([]) // reactive variable
 
-onMounted(async () => {
-  try {
-    const res = await axios.get('http://localhost:5000/rooms') // your backend URL
-    rooms.value = res.data.map((r) => ({
-      title: r.title,
-      price: r.price,
-      description: r.description,
-      image: r.image, // use the image from backend
-      bestValue: r.bestValue,
-      amenities: r.amenities,
-      tags: r.tags,
-    }))
-  } catch (err) {
-    console.error('Error fetching rooms:', err)
+const rooms = ref([
+  {
+    title: "Ocean View Suite",
+    price: 450,
+    description: "Luxurious suite with panoramic ocean views, private balcony, and premium amenities.",
+    image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+    bestValue: true,
+    amenities: [
+      { name: "Ocean View", icon: "🌊" },
+      { name: "Private Balcony", icon: "🏖️" },
+      { name: "King Bed", icon: "🛏️" },
+      { name: "Mini Bar", icon: "🍷" }
+    ],
+    tags: ["Popular", "Ocean View", "Balcony"]
+  },
+  {
+    title: "Garden Villa",
+    price: 380,
+    description: "Spacious villa surrounded by tropical gardens with private pool and outdoor dining area.",
+    image: "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg",
+    bestValue: false,
+    amenities: [
+      { name: "Private Pool", icon: "🏊" },
+      { name: "Garden View", icon: "🌺" },
+      { name: "Outdoor Dining", icon: "🍽️" },
+      { name: "WiFi", icon: "📶" }
+    ],
+    tags: ["Private Pool", "Garden", "Spacious"]
+  },
+  {
+    title: "Presidential Suite",
+    price: 750,
+    description: "The ultimate luxury experience with butler service, private chef, and exclusive amenities.",
+    image: "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg",
+    bestValue: false,
+    amenities: [
+      { name: "Butler Service", icon: "🤵" },
+      { name: "Private Chef", icon: "👨‍🍳" },
+      { name: "Jacuzzi", icon: "🛁" },
+      { name: "Champagne", icon: "🥂" }
+    ],
+    tags: ["Luxury", "Butler", "Exclusive"]
   }
-})
+])
 </script>
 
 <style scoped>
