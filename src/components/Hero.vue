@@ -4,10 +4,14 @@
     <div class="absolute inset-0">
       <div
         class="absolute inset-0 bg-cover bg-center"
-        style="background-image: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg')"
+        style="
+          background-image: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg');
+        "
       ></div>
       <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
+      ></div>
     </div>
 
     <!-- Navigation -->
@@ -17,24 +21,18 @@
     <div class="relative z-10 flex-1 flex items-center justify-center text-center px-6">
       <div class="max-w-5xl mx-auto">
         <div data-aos="fade-up" data-aos-duration="1000">
-          <span class="inline-block px-4 py-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 rounded-full text-yellow-300 text-sm font-semibold mb-6">
-            ✨ Welcome to Prestige
-          </span>
-          
-          <h1 class="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight text-shadow-lg">
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 text-shadow-lg">
             Experience
-            <span class="text-gradient block">Prestige</span>
+            <span class="text-tigers_eye-600 block">Prestige</span>
           </h1>
-          
+
           <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Where luxury meets comfort in the heart of paradise. Discover unparalleled elegance and world-class hospitality.
+            Where luxury meets comfort in the heart of paradise. Discover unparalleled elegance and
+            world-class hospitality.
           </p>
-          
+
           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              @click="scrollToRooms"
-              class="btn-primary text-lg px-10 py-4"
-            >
+            <button @click="scrollToRooms" class="btn-primary text-lg px-10 py-4">
               Explore Rooms
             </button>
             <button
@@ -51,8 +49,8 @@
     <!-- Booking Widget -->
     <div class="relative z-10 pb-8">
       <div class="container-custom">
-        <div 
-          data-aos="fade-up" 
+        <div
+          data-aos="fade-up"
           data-aos-delay="300"
           class="glass-effect rounded-2xl p-6 mx-6 shadow-2xl border border-white/20"
         >
@@ -62,7 +60,7 @@
               <input
                 v-model="checkIn"
                 type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
               />
             </div>
 
@@ -71,7 +69,7 @@
               <input
                 v-model="checkOut"
                 type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
               />
             </div>
 
@@ -82,7 +80,7 @@
                 type="number"
                 min="1"
                 max="8"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
               />
             </div>
 
@@ -90,7 +88,7 @@
               <label class="block text-white text-sm font-medium">Room Type</label>
               <select
                 v-model="room"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus:border-sky-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
               >
                 <option value="" class="text-gray-900">Select Room</option>
                 <option value="Ocean View Suite" class="text-gray-900">Ocean View Suite</option>
@@ -103,7 +101,7 @@
               <button
                 type="button"
                 @click="handleBooking"
-                class="w-full bg-gradient-to-r from-sky-500 to-teal-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-sky-600 hover:to-teal-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                class="w-full bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-tigers_eye-600 hover:to-dark_moss_green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Check Availability
               </button>
@@ -117,7 +115,12 @@
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
       <div class="animate-bounce">
         <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
         </svg>
       </div>
     </div>
@@ -156,7 +159,7 @@ function handleBooking() {
     alert('Please select both check-in and check-out dates.')
     return
   }
-  
+
   const inDate = new Date(checkIn.value)
   const outDate = new Date(checkOut.value)
   if (outDate <= inDate) {
@@ -178,7 +181,7 @@ function handleBooking() {
 
 <style scoped>
 /* Custom date input styling */
-input[type="date"]::-webkit-calendar-picker-indicator {
+input[type='date']::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
 }

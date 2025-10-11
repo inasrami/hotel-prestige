@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
     <!-- Navigation -->
     <Navbar />
 
@@ -8,14 +8,17 @@
       <div class="container-custom">
         <div class="text-center">
           <div data-aos="fade-up" data-aos-duration="1000">
-            <span class="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold mb-6">
+            <span
+              class="inline-block px-4 py-2 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold mb-6"
+            >
               Get in Touch
             </span>
             <h1 class="font-serif text-6xl md:text-7xl font-bold text-gray-900 mb-6">
               Contact <span class="text-gradient">Us</span>
             </h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              We're here to assist you with any questions or special requests. Reach out to our dedicated team.
+              We're here to assist you with any questions or special requests. Reach out to our
+              dedicated team.
             </p>
           </div>
         </div>
@@ -29,12 +32,16 @@
           <!-- Contact Form -->
           <div data-aos="fade-right" data-aos-duration="800">
             <div class="card-elegant p-8">
-              <h2 class="font-serif text-3xl font-semibold text-gray-900 mb-6">Send us a Message</h2>
-              
+              <h2 class="font-serif text-3xl font-semibold text-gray-900 mb-6">
+                Send us a Message
+              </h2>
+
               <form @submit.prevent="submitForm" class="space-y-6">
                 <div class="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label class="block text-gray-700 font-medium mb-2" for="firstName">First Name</label>
+                    <label class="block text-gray-700 font-medium mb-2" for="firstName"
+                      >First Name</label
+                    >
                     <input
                       v-model="form.firstName"
                       type="text"
@@ -45,7 +52,9 @@
                     />
                   </div>
                   <div>
-                    <label class="block text-gray-700 font-medium mb-2" for="lastName">Last Name</label>
+                    <label class="block text-gray-700 font-medium mb-2" for="lastName"
+                      >Last Name</label
+                    >
                     <input
                       v-model="form.lastName"
                       type="text"
@@ -58,7 +67,9 @@
                 </div>
 
                 <div>
-                  <label class="block text-gray-700 font-medium mb-2" for="email">Email Address</label>
+                  <label class="block text-gray-700 font-medium mb-2" for="email"
+                    >Email Address</label
+                  >
                   <input
                     v-model="form.email"
                     type="email"
@@ -70,7 +81,9 @@
                 </div>
 
                 <div>
-                  <label class="block text-gray-700 font-medium mb-2" for="phone">Phone Number</label>
+                  <label class="block text-gray-700 font-medium mb-2" for="phone"
+                    >Phone Number</label
+                  >
                   <input
                     v-model="form.phone"
                     type="tel"
@@ -116,9 +129,25 @@
                 >
                   <span v-if="!isSubmitting">Send Message</span>
                   <span v-else class="flex items-center justify-center">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <svg
+                      class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        class="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        stroke-width="4"
+                      ></circle>
+                      <path
+                        class="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
                     </svg>
                     Sending...
                   </span>
@@ -132,9 +161,15 @@
               >
                 <div class="flex items-center">
                   <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
                   </svg>
-                  <p class="text-green-700 font-medium">Message sent successfully! We'll get back to you soon.</p>
+                  <p class="text-green-700 font-medium">
+                    Message sent successfully! We'll get back to you soon.
+                  </p>
                 </div>
               </div>
             </div>
@@ -144,21 +179,27 @@
           <div data-aos="fade-left" data-aos-duration="800" class="space-y-8">
             <!-- Contact Details -->
             <div class="card-elegant p-8">
-              <h3 class="font-serif text-2xl font-semibold text-gray-900 mb-6">Contact Information</h3>
-              
+              <h3 class="font-serif text-2xl font-semibold text-gray-900 mb-6">
+                Contact Information
+              </h3>
+
               <div class="space-y-6">
                 <div
                   v-for="contact in contactInfo"
                   :key="contact.title"
                   class="flex items-start space-x-4"
                 >
-                  <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center"
+                  >
                     <span class="text-white text-xl">{{ contact.icon }}</span>
                   </div>
                   <div>
                     <h4 class="font-semibold text-gray-900 mb-1">{{ contact.title }}</h4>
                     <p class="text-gray-600">{{ contact.value }}</p>
-                    <p v-if="contact.subtitle" class="text-gray-500 text-sm">{{ contact.subtitle }}</p>
+                    <p v-if="contact.subtitle" class="text-gray-500 text-sm">
+                      {{ contact.subtitle }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -167,7 +208,7 @@
             <!-- Business Hours -->
             <div class="card-elegant p-8">
               <h3 class="font-serif text-2xl font-semibold text-gray-900 mb-6">Business Hours</h3>
-              
+
               <div class="space-y-3">
                 <div
                   v-for="hour in businessHours"
@@ -183,7 +224,7 @@
             <!-- Quick Actions -->
             <div class="card-elegant p-8">
               <h3 class="font-serif text-2xl font-semibold text-gray-900 mb-6">Quick Actions</h3>
-              
+
               <div class="space-y-4">
                 <button
                   @click="goToBooking"
@@ -191,17 +232,25 @@
                 >
                   <span>Make a Reservation</span>
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
                   </svg>
                 </button>
-                
+
                 <router-link
                   to="/services"
                   class="w-full btn-secondary text-left flex items-center justify-between block"
                 >
                   <span>View Our Services</span>
                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
                   </svg>
                 </router-link>
               </div>
@@ -226,7 +275,7 @@ const form = ref({
   email: '',
   phone: '',
   subject: '',
-  message: ''
+  message: '',
 })
 
 const isSubmitting = ref(false)
@@ -238,12 +287,12 @@ function goToBooking() {
 
 async function submitForm() {
   isSubmitting.value = true
-  
+
   // Simulate form submission
-  await new Promise(resolve => setTimeout(resolve, 1500))
-  
+  await new Promise((resolve) => setTimeout(resolve, 1500))
+
   console.log('Form submitted:', form.value)
-  
+
   // Reset form
   form.value = {
     firstName: '',
@@ -251,12 +300,12 @@ async function submitForm() {
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
   }
-  
+
   isSubmitting.value = false
   showSuccess.value = true
-  
+
   // Hide success message after 5 seconds
   setTimeout(() => {
     showSuccess.value = false
@@ -268,26 +317,26 @@ const contactInfo = [
     title: 'Address',
     value: 'Shatervan District, Prizren',
     subtitle: 'Kosovo',
-    icon: '📍'
+    icon: '📍',
   },
   {
     title: 'Phone',
     value: '+383 44 444 444',
     subtitle: 'Available 24/7',
-    icon: '📞'
+    icon: '📞',
   },
   {
     title: 'Email',
     value: 'info@hotelprestige.com',
     subtitle: 'We respond within 24 hours',
-    icon: '✉️'
+    icon: '✉️',
   },
   {
     title: 'Reservations',
     value: 'reservations@hotelprestige.com',
     subtitle: 'For booking inquiries',
-    icon: '🏨'
-  }
+    icon: '🏨',
+  },
 ]
 
 const businessHours = [
@@ -295,6 +344,6 @@ const businessHours = [
   { day: 'Saturday', time: '24/7' },
   { day: 'Sunday', time: '24/7' },
   { day: 'Front Desk', time: 'Always Open' },
-  { day: 'Concierge', time: '6:00 AM - 12:00 AM' }
+  { day: 'Concierge', time: '6:00 AM - 12:00 AM' },
 ]
 </script>

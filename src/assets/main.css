@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +7,10 @@
 :root {
   --primary: #0f172a;
   --secondary: #1e293b;
-  --accent: #0ea5e9;
-  --accent-dark: #0284c7;
-  --teal: #14b8a6;
-  --teal-dark: #0d9488;
+  --accent: #bc6c25; /* tigers_eye */
+  --accent-dark: #a56a1f;
+  --teal: #606c38; /* dark_moss_green */
+  --teal-dark: #283618; /* pakistan_green */
   --cream: #fefefe;
   --text-primary: #0f172a;
   --text-secondary: #64748b;
@@ -38,7 +39,6 @@ body {
   font-family: 'Playfair Display', serif;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -56,18 +56,17 @@ body {
   background: linear-gradient(to bottom, var(--accent-dark), var(--teal-dark));
 }
 
-/* Focus styles */
 a:focus,
 button:focus,
 input:focus,
 textarea:focus,
 select:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+  /* focus ring uses accent (now gold) */
+  box-shadow: 0 0 0 3px rgba(188, 108, 37, 0.18);
   border-radius: 8px;
 }
 
-/* Utility classes */
 .glass-effect {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
@@ -82,11 +81,11 @@ select:focus {
 }
 
 .btn-primary {
-  @apply bg-gradient-to-r from-sky-600 to-teal-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-sky-700 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+  @apply bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 text-white px-8 py-3 rounded-xl font-semibold hover:from-tigers_eye-600 hover:to-dark_moss_green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
 }
 
 .btn-secondary {
-  @apply border-2 border-sky-600 text-sky-600 px-8 py-3 rounded-xl font-semibold hover:bg-sky-600 hover:text-white transition-all duration-300;
+  @apply border-2 border-tigers_eye-500 text-tigers_eye-500 px-8 py-3 rounded-xl font-semibold hover:bg-tigers_eye-500 hover:text-white transition-all duration-300;
 }
 
 .section-padding {
@@ -139,15 +138,15 @@ select:focus {
 
 /* Gradient backgrounds */
 .bg-luxury {
-  background: linear-gradient(135deg, #0ea5e9 0%, #14b8a6 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--teal) 100%);
 }
 
 .bg-elegant {
-  background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  background: linear-gradient(135deg, #d9a84a 0%, #7a8a3b 100%);
 }
 
 .bg-premium {
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #b07a2a 0%, #4a5a28 100%);
 }
 
 /* Text shadows for better readability on images */
@@ -164,11 +163,11 @@ select:focus {
   .text-5xl {
     font-size: 2.5rem;
   }
-  
+
   .text-4xl {
     font-size: 2rem;
   }
-  
+
   .text-3xl {
     font-size: 1.75rem;
   }
@@ -193,5 +192,5 @@ select:focus {
 }
 
 .notification.info {
-  @apply bg-blue-500 text-white;
+  @apply bg-tigers_eye-500 text-white;
 }

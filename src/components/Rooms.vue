@@ -1,18 +1,26 @@
 <template>
-  <section id="rooms" class="py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+  <section
+    id="rooms"
+    class="py-24 bg-gradient-to-br from-slate-50 via-dark_moss_green-50 to-dark_moss_green-100"
+  >
     <div class="max-w-7xl mx-auto px-6">
       <!-- Header Section -->
       <div class="text-center mb-20">
         <div class="inline-block">
-          <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider mb-2 block">
+          <span
+            class="text-sm font-semibold text-tigers_eye-600 uppercase tracking-wider mb-2 block"
+          >
             Accommodations
           </span>
           <h2 class="text-5xl font-serif mb-6 text-gray-900 leading-tight">
             Luxury Suites & Villas
           </h2>
-          <div class="w-24 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto mb-6"></div>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 mx-auto mb-6"
+          ></div>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Each accommodation is thoughtfully designed to provide the ultimate in comfort, luxury, and breathtaking views.
+            Each accommodation is thoughtfully designed to provide the ultimate in comfort, luxury,
+            and breathtaking views.
           </p>
         </div>
       </div>
@@ -22,7 +30,6 @@
         <div
           data-aos="fade-up"
           data-aos-duration="800"
-          data-aos-delay="100"
           v-for="(room, index) in rooms"
           :key="room.title"
           :data-aos-delay="100 * (index + 1)"
@@ -30,13 +37,15 @@
         >
           <!-- Image Container -->
           <div class="relative overflow-hidden">
-            <img 
-              :src="room.image" 
-              :alt="room.title" 
+            <img
+              :src="room.image"
+              :alt="room.title"
               class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+
             <!-- Best Value Badge -->
             <div
               v-if="room.bestValue"
@@ -46,7 +55,9 @@
             </div>
 
             <!-- Price Overlay -->
-            <div class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg">
+            <div
+              class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg"
+            >
               <div class="text-3xl font-bold text-gray-900">${{ room.price }}</div>
               <div class="text-sm text-gray-500 font-medium">per night</div>
             </div>
@@ -54,7 +65,9 @@
 
           <!-- Content -->
           <div class="p-8">
-            <h3 class="text-2xl font-serif text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors">
+            <h3
+              class="text-2xl font-serif text-gray-900 mb-4 group-hover:text-tigers_eye-600 transition-colors"
+            >
               {{ room.title }}
             </h3>
 
@@ -79,7 +92,7 @@
               <span
                 v-for="tag in room.tags"
                 :key="tag"
-                class="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 text-indigo-700 rounded-full text-xs font-semibold uppercase tracking-wide"
+                class="px-3 py-1 bg-gradient-to-r from-tigers_eye-100 to-dark_moss_green-100 text-tigers_eye-700 rounded-full text-xs font-semibold uppercase tracking-wide"
               >
                 {{ tag }}
               </span>
@@ -88,13 +101,13 @@
             <!-- Action Buttons -->
             <div class="flex gap-3">
               <button
-                class="flex-1 py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-indigo-300 hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-300 font-semibold"
+                class="flex-1 py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-tigers_eye-300 hover:text-tigers_eye-600 hover:bg-tigers_eye-50 transition-all duration-300 font-semibold"
               >
                 View Details
               </button>
               <button
                 @click="goToBooking"
-                class="flex-1 py-3 px-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+                class="flex-1 py-3 px-4 bg-gradient-to-r from-tigers_eye-600 to-dark_moss_green-600 text-white rounded-xl hover:from-tigers_eye-700 hover:to-dark_moss_green-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 Book Now
               </button>
@@ -102,7 +115,9 @@
           </div>
 
           <!-- Decorative Element -->
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+          <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tigers_eye-500 via-dark_moss_green-500 to-brown-500"
+          ></div>
         </div>
       </div>
 
@@ -110,8 +125,12 @@
       <div class="text-center mt-20">
         <div class="inline-block bg-white rounded-2xl shadow-lg p-8">
           <h3 class="text-2xl font-serif text-gray-900 mb-4">Can't decide?</h3>
-          <p class="text-gray-600 mb-6">Let our concierge help you find the perfect accommodation</p>
-          <button class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-indigo-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+          <p class="text-gray-600 mb-6">
+            Let our concierge help you find the perfect accommodation
+          </p>
+          <button
+            class="bg-gradient-to-r from-tigers_eye-600 to-dark_moss_green-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-tigers_eye-700 hover:to-dark_moss_green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
             Contact Concierge
           </button>
         </div>
@@ -133,47 +152,50 @@ function goToBooking() {
 
 const rooms = ref([
   {
-    title: "Ocean View Suite",
+    title: 'Ocean View Suite',
     price: 450,
-    description: "Luxurious suite with panoramic ocean views, private balcony, and premium amenities. Wake up to breathtaking sunrises and enjoy the sound of waves from your private sanctuary.",
-    image: "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+    description:
+      'Luxurious suite with panoramic ocean views, private balcony, and premium amenities. Wake up to breathtaking sunrises and enjoy the sound of waves from your private sanctuary.',
+    image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg',
     bestValue: true,
     amenities: [
-      { name: "Ocean View", icon: "🌊" },
-      { name: "Private Balcony", icon: "🏖️" },
-      { name: "King Bed", icon: "🛏️" },
-      { name: "Mini Bar", icon: "🍷" }
+      { name: 'Ocean View', icon: '🌊' },
+      { name: 'Private Balcony', icon: '🏖️' },
+      { name: 'King Bed', icon: '🛏️' },
+      { name: 'Mini Bar', icon: '🍷' },
     ],
-    tags: ["Popular", "Ocean View", "Balcony"]
+    tags: ['Popular', 'Ocean View', 'Balcony'],
   },
   {
-    title: "Garden Villa",
+    title: 'Garden Villa',
     price: 380,
-    description: "Spacious villa surrounded by tropical gardens with private pool and outdoor dining area. Perfect for families or couples seeking privacy and tranquility in a natural setting.",
-    image: "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg",
+    description:
+      'Spacious villa surrounded by tropical gardens with private pool and outdoor dining area. Perfect for families or couples seeking privacy and tranquility in a natural setting.',
+    image: 'https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg',
     bestValue: false,
     amenities: [
-      { name: "Private Pool", icon: "🏊" },
-      { name: "Garden View", icon: "🌺" },
-      { name: "Outdoor Dining", icon: "🍽️" },
-      { name: "WiFi", icon: "📶" }
+      { name: 'Private Pool', icon: '🏊' },
+      { name: 'Garden View', icon: '🌺' },
+      { name: 'Outdoor Dining', icon: '🍽️' },
+      { name: 'WiFi', icon: '📶' },
     ],
-    tags: ["Private Pool", "Garden", "Spacious"]
+    tags: ['Private Pool', 'Garden', 'Spacious'],
   },
   {
-    title: "Presidential Suite",
+    title: 'Presidential Suite',
     price: 750,
-    description: "The ultimate luxury experience with butler service, private chef, and exclusive amenities. Indulge in unparalleled comfort with personalized service and premium facilities.",
-    image: "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg",
+    description:
+      'The ultimate luxury experience with butler service, private chef, and exclusive amenities. Indulge in unparalleled comfort with personalized service and premium facilities.',
+    image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg',
     bestValue: false,
     amenities: [
-      { name: "Butler Service", icon: "🤵" },
-      { name: "Private Chef", icon: "👨‍🍳" },
-      { name: "Jacuzzi", icon: "🛁" },
-      { name: "Champagne", icon: "🥂" }
+      { name: 'Butler Service', icon: '🤵' },
+      { name: 'Private Chef', icon: '👨‍🍳' },
+      { name: 'Jacuzzi', icon: '🛁' },
+      { name: 'Champagne', icon: '🥂' },
     ],
-    tags: ["Luxury", "Butler", "Exclusive"]
-  }
+    tags: ['Luxury', 'Butler', 'Exclusive'],
+  },
 ])
 </script>
 
@@ -196,18 +218,17 @@ const rooms = ref([
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #6366f1, #8b5cf6);
+  background: linear-gradient(to bottom, #bc6c25, #606c38);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+  background: linear-gradient(to bottom, #a0561f, #283618);
 }
 
-/* Enhanced hover effects */
 @media (hover: hover) {
   .group:hover .absolute.inset-0 {
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    background: linear-gradient(135deg, rgba(188, 108, 37, 0.08), rgba(96, 108, 56, 0.08));
   }
 }
 
@@ -217,11 +238,11 @@ const rooms = ref([
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .text-5xl {
     font-size: 2.5rem;
   }
-  
+
   .py-24 {
     padding-top: 4rem;
     padding-bottom: 4rem;
