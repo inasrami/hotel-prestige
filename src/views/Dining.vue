@@ -4,7 +4,10 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+      data-hero-theme="dark"
+    >
       <div
         class="absolute inset-0 bg-cover bg-center"
         style="
@@ -16,7 +19,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <div data-aos="fade-up" data-aos-duration="1000">
           <span
-            class="inline-block px-4 py-2 bg-tigers_eye-500/20 backdrop-blur-sm border border-tigers_eye-500/30 rounded-full text-tigers_eye-300 text-sm font-semibold mb-6"
+            class="inline-block px-4 py-2 bg-accent-10 backdrop-blur-sm border border-accent-10 rounded-full text-accent text-sm font-semibold mb-6"
           >
             Culinary Excellence
           </span>
@@ -75,7 +78,7 @@
                   <h3 class="font-serif text-3xl font-bold text-gray-900 mb-2">
                     {{ restaurant.name }}
                   </h3>
-                  <p class="text-dark_moss_green-600 font-semibold">{{ restaurant.cuisine }}</p>
+                  <p class="text-muted font-semibold">{{ restaurant.cuisine }}</p>
                 </div>
 
                 <p class="text-lg text-gray-600 leading-relaxed">{{ restaurant.description }}</p>
@@ -97,7 +100,7 @@
                     <span
                       v-for="dish in restaurant.dishes"
                       :key="dish"
-                      class="px-3 py-1 bg-tigers_eye-100 text-tigers_eye-700 rounded-full text-sm font-medium"
+                      class="px-3 py-1 bg-accent-10 text-accent rounded-full text-sm font-medium"
                     >
                       {{ dish }}
                     </span>
@@ -116,7 +119,7 @@
     </section>
 
     <!-- Menu Highlights -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
+    <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-16">
           <h2 class="font-serif text-4xl font-bold text-gray-900 mb-6">
@@ -139,7 +142,7 @@
             <div class="p-6">
               <div class="flex justify-between items-start mb-3">
                 <h3 class="font-serif text-xl font-semibold text-gray-900">{{ dish.name }}</h3>
-                <span class="text-lg font-bold text-dark_moss_green-600">${{ dish.price }}</span>
+                <span class="text-lg font-bold text-muted">${{ dish.price }}</span>
               </div>
               <p class="text-gray-600 text-sm mb-4">{{ dish.description }}</p>
               <div class="flex items-center justify-between">
@@ -159,9 +162,7 @@
     </section>
 
     <!-- Reservations CTA -->
-    <section
-      class="section-padding bg-gradient-to-br from-gray-900 via-tigers_eye-900 to-dark_moss_green-900 text-white"
-    >
+    <section class="section-padding bg-gray-900 text-white">
       <div class="container-custom text-center">
         <div data-aos="fade-up" data-aos-duration="1000">
           <h2 class="font-serif text-4xl font-bold mb-6">

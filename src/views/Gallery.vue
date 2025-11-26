@@ -36,7 +36,7 @@
             :class="[
               'px-6 py-3 rounded-xl font-semibold transition-all duration-300',
               activeCategory === category
-                ? 'bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 text-white shadow-lg'
+                ? 'bg-accent text-white shadow-lg'
                 : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
             ]"
           >

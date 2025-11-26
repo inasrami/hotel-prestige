@@ -7,7 +7,8 @@
           <img src="/images/logo.png" alt="Hotel Logo" class="h-10 w-10 object-contain" />
           <div class="hidden sm:block">
             <h1
-              class="font-serif text-2xl font-bold text-white group-hover:text-tigers_eye-300 transition-colors"
+              class="font-serif text-2xl font-bold group-hover:text-accent transition-colors"
+              :class="{ 'text-black': scrolled, 'text-white': !scrolled }"
             >
               Hotel Prestige
             </h1>
@@ -48,22 +49,22 @@
               <div class="py-2">
                 <router-link
                   to="/dining"
-                  class="block px-4 py-2 text-gray-700 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 transition-colors"
+                  class="block px-4 py-2 text-gray-700 hover:bg-accent-10 hover:text-accent transition-colors"
                   >Dining</router-link
                 >
                 <router-link
                   to="/spa"
-                  class="block px-4 py-2 text-gray-700 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 transition-colors"
+                  class="block px-4 py-2 text-gray-700 hover:bg-accent-10 hover:text-accent transition-colors"
                   >Spa & Wellness</router-link
                 >
                 <router-link
                   to="/events"
-                  class="block px-4 py-2 text-gray-700 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 transition-colors"
+                  class="block px-4 py-2 text-gray-700 hover:bg-accent-10 hover:text-accent transition-colors"
                   >Events</router-link
                 >
                 <router-link
                   to="/gallery"
-                  class="block px-4 py-2 text-gray-700 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 transition-colors"
+                  class="block px-4 py-2 text-gray-700 hover:bg-accent-10 hover:text-accent transition-colors"
                   >Gallery</router-link
                 >
               </div>
@@ -91,18 +92,17 @@
 
         <!-- CTA Button -->
         <div class="hidden md:flex items-center space-x-4">
-          <button
-            @click="goToBooking"
-            class="bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-tigers_eye-600 hover:to-dark_moss_green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            Book Now
-          </button>
+          <button @click="goToBooking" class="btn-primary">Book Now</button>
         </div>
 
         <!-- Mobile Menu Button -->
         <button
           @click="toggleMobileMenu"
-          class="lg:hidden p-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+          class="lg:hidden p-2 rounded-lg bg-white/10 backdrop-blur-sm border transition-all duration-300"
+          :class="{
+            'text-black bg-white/80 border-gray-300': scrolled,
+            'text-white bg-white/10 border-white/20': !scrolled,
+          }"
         >
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path
@@ -132,62 +132,62 @@
           <router-link
             to="/"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Home
           </router-link>
           <router-link
             to="/about"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             About
           </router-link>
           <router-link
             to="/dining"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Dining
           </router-link>
           <router-link
             to="/spa"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Spa & Wellness
           </router-link>
           <router-link
             to="/events"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Events
           </router-link>
           <router-link
             to="/gallery"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Gallery
           </router-link>
           <router-link
             to="/services"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Services
           </router-link>
           <router-link
             to="/contact"
             @click="closeMobileMenu"
-            class="block py-3 px-4 text-gray-800 hover:bg-tigers_eye-100 hover:text-tigers_eye-600 rounded-xl transition-all duration-300 font-medium"
+            class="block py-3 px-4 text-gray-800 hover:bg-accent-10 hover:text-accent rounded-xl transition-all duration-300 font-medium"
           >
             Contact
           </router-link>
           <button
             @click="goToBooking"
-            class="w-full mt-4 bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 text-white py-3 rounded-xl font-semibold hover:from-tigers_eye-600 hover:to-dark_moss_green-600 transition-all duration-300"
+            class="w-full mt-4 btn-primary text-white py-3 rounded-xl font-semibold"
           >
             Book Now
           </button>
@@ -206,11 +206,19 @@ const route = useRoute()
 
 const mobileMenuOpen = ref(false)
 const scrolled = ref(false)
+const heroUnderNavDark = ref(false)
 
-const navClasses = computed(() => ({
-  'glass-effect': scrolled.value,
-  'bg-transparent': !scrolled.value,
-}))
+const navClasses = computed(() => {
+  const isTransparent = !scrolled.value
+  const isWhiteText = isTransparent && heroUnderNavDark.value
+  return {
+    'glass-effect': scrolled.value,
+    'bg-transparent': isTransparent,
+    'text-white': isWhiteText,
+    'text-black': !isWhiteText,
+    'backdrop-blur-sm': scrolled.value,
+  }
+})
 
 function toggleMobileMenu() {
   mobileMenuOpen.value = !mobileMenuOpen.value
@@ -227,20 +235,56 @@ function goToBooking() {
 
 function handleScroll() {
   scrolled.value = window.scrollY > 50
+  updateHeroThemeUnderNav()
+}
+
+function updateHeroThemeUnderNav() {
+  try {
+    const x = window.innerWidth / 2
+    const y = 10 // a point under navbar
+    const el = document.elementFromPoint(x, y)
+    if (!el) {
+      heroUnderNavDark.value = false
+      return
+    }
+    // look for a parent with data-hero-theme attribute
+    let node = el
+    while (node && node !== document.body) {
+      if (node.dataset && node.dataset.heroTheme) {
+        heroUnderNavDark.value = node.dataset.heroTheme === 'dark'
+        return
+      }
+      node = node.parentElement
+    }
+    heroUnderNavDark.value = false
+  } catch (e) {
+    heroUnderNavDark.value = false
+  }
 }
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', updateHeroThemeUnderNav)
+  // run once to initialize
+  updateHeroThemeUnderNav()
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', updateHeroThemeUnderNav)
 })
 </script>
 
 <style scoped>
 .nav-link {
-  @apply text-white hover:text-tigers_eye-300 transition-colors duration-300 font-medium relative;
+  /* inherit color from nav to allow toggling via scrolled state */
+  color: inherit;
+  transition: color 0.3s ease;
+  font-weight: 500;
+  position: relative;
+}
+.nav-link:hover {
+  color: var(--accent);
 }
 
 .nav-link::after {
@@ -250,7 +294,7 @@ onUnmounted(() => {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--accent), var(--teal));
+  background: linear-gradient(to right, var(--accent), var(--muted));
   transition: width 0.3s ease;
 }
 

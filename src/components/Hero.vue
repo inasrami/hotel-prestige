@@ -1,5 +1,5 @@
 <template>
-  <section class="relative min-h-screen flex flex-col overflow-hidden">
+  <section class="relative min-h-screen flex flex-col overflow-hidden" data-hero-theme="dark">
     <!-- Background Video/Image -->
     <div class="absolute inset-0">
       <div
@@ -23,7 +23,7 @@
         <div data-aos="fade-up" data-aos-duration="1000">
           <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 text-shadow-lg">
             Experience
-            <span class="text-tigers_eye-600 block">Prestige</span>
+            <span class="text-accent block">Prestige</span>
           </h1>
 
           <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -35,10 +35,7 @@
             <button @click="scrollToRooms" class="btn-primary text-lg px-10 py-4">
               Explore Rooms
             </button>
-            <button
-              @click="goToBooking"
-              class="btn-secondary text-lg px-10 py-4 bg-transparent border-white text-white hover:bg-white hover:text-gray-900"
-            >
+            <button @click="goToBooking" class="btn-secondary text-lg px-10 py-4">
               Book Your Stay
             </button>
           </div>
@@ -60,7 +57,7 @@
               <input
                 v-model="checkIn"
                 type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus-border-accent transition-all duration-300"
               />
             </div>
 
@@ -69,7 +66,7 @@
               <input
                 v-model="checkOut"
                 type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus-border-accent transition-all duration-300"
               />
             </div>
 
@@ -80,7 +77,7 @@
                 type="number"
                 min="1"
                 max="8"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus-border-accent transition-all duration-300"
               />
             </div>
 
@@ -88,7 +85,7 @@
               <label class="block text-white text-sm font-medium">Room Type</label>
               <select
                 v-model="room"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus:border-tigers_eye-400 transition-all duration-300"
+                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus-border-accent transition-all duration-300"
               >
                 <option value="" class="text-gray-900">Select Room</option>
                 <option value="Ocean View Suite" class="text-gray-900">Ocean View Suite</option>
@@ -98,11 +95,7 @@
             </div>
 
             <div class="flex items-end">
-              <button
-                type="button"
-                @click="handleBooking"
-                class="w-full bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-tigers_eye-600 hover:to-dark_moss_green-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-              >
+              <button type="button" @click="handleBooking" class="w-full btn-primary">
                 Check Availability
               </button>
             </div>

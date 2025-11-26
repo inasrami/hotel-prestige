@@ -4,7 +4,10 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+      data-hero-theme="dark"
+    >
       <div
         class="absolute inset-0 bg-cover bg-center"
         style="
@@ -17,9 +20,8 @@
         <div data-aos="fade-up" data-aos-duration="1000">
           <span
             class="inline-block px-4 py-2 bg-yellow-500/20 backdrop-blur-sm border border-yellow-500/30 rounded-full text-yellow-300 text-sm font-semibold mb-6"
+            >Premium Services</span
           >
-            Premium Services
-          </span>
           <h1 class="font-serif text-6xl md:text-7xl font-bold mb-6 text-shadow-lg">
             Exceptional <span class="text-gradient">Service</span>
           </h1>
@@ -31,7 +33,7 @@
     </section>
 
     <!-- Services Grid -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
+    <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-16">
           <div data-aos="fade-up">
@@ -56,18 +58,18 @@
             <!-- Icon -->
             <div class="relative mb-6">
               <div
-                class="w-20 h-20 mx-auto bg-gradient-to-br from-tigers_eye-500 to-dark_moss_green-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500"
+                class="w-20 h-20 mx-auto bg-accent rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-500"
               >
                 <span class="text-3xl text-white">{{ service.icon }}</span>
               </div>
               <div
-                class="absolute -inset-4 bg-gradient-to-r from-tigers_eye-400/20 to-dark_moss_green-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                class="absolute -inset-4 bg-accent-10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
               ></div>
             </div>
 
             <!-- Content -->
             <h3
-              class="font-serif text-2xl font-semibold text-gray-900 mb-4 group-hover:text-tigers_eye-700 transition-colors"
+              class="font-serif text-2xl font-semibold text-gray-900 mb-4 group-hover:text-accent transition-colors"
             >
               {{ service.title }}
             </h3>
@@ -82,11 +84,7 @@
                 :key="feature"
                 class="flex items-center justify-center text-sm text-gray-500"
               >
-                <svg
-                  class="w-4 h-4 text-tigers_eye-500 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
+                <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path
                     fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -99,7 +97,7 @@
 
             <!-- Hover Effect -->
             <div
-              class="absolute inset-0 bg-gradient-to-br from-tigers_eye-400/5 to-dark_moss_green-400/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              class="absolute inset-0 bg-accent-10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
             ></div>
           </div>
         </div>
@@ -107,9 +105,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section
-      class="section-padding bg-gradient-to-br from-gray-900 via-dark_moss_green-900 to-dark_moss_green-700 text-white"
-    >
+    <section class="section-padding bg-gray-900 text-white">
       <div class="container-custom text-center">
         <div data-aos="fade-up" data-aos-duration="1000">
           <h2 class="font-serif text-5xl font-bold mb-6">

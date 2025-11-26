@@ -1,23 +1,16 @@
 <template>
-  <section
-    id="rooms"
-    class="py-24 bg-gradient-to-br from-slate-50 via-dark_moss_green-50 to-dark_moss_green-100"
-  >
+  <section id="rooms" class="py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-6">
       <!-- Header Section -->
       <div class="text-center mb-20">
         <div class="inline-block">
-          <span
-            class="text-sm font-semibold text-tigers_eye-600 uppercase tracking-wider mb-2 block"
-          >
+          <span class="text-sm font-semibold text-accent uppercase tracking-wider mb-2 block">
             Accommodations
           </span>
           <h2 class="text-5xl font-serif mb-6 text-gray-900 leading-tight">
             Luxury Suites & Villas
           </h2>
-          <div
-            class="w-24 h-1 bg-gradient-to-r from-tigers_eye-500 to-dark_moss_green-500 mx-auto mb-6"
-          ></div>
+          <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
           <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Each accommodation is thoughtfully designed to provide the ultimate in comfort, luxury,
             and breathtaking views.
@@ -49,7 +42,7 @@
             <!-- Best Value Badge -->
             <div
               v-if="room.bestValue"
-              class="absolute top-6 right-6 bg-gradient-to-r from-yellow-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
+              class="absolute top-6 right-6 bg-yellow-400 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
             >
               ⭐ Best Value
             </div>
@@ -66,7 +59,7 @@
           <!-- Content -->
           <div class="p-8">
             <h3
-              class="text-2xl font-serif text-gray-900 mb-4 group-hover:text-tigers_eye-600 transition-colors"
+              class="text-2xl font-serif text-gray-900 mb-4 group-hover:text-accent transition-colors"
             >
               {{ room.title }}
             </h3>
@@ -92,7 +85,7 @@
               <span
                 v-for="tag in room.tags"
                 :key="tag"
-                class="px-3 py-1 bg-gradient-to-r from-tigers_eye-100 to-dark_moss_green-100 text-tigers_eye-700 rounded-full text-xs font-semibold uppercase tracking-wide"
+                class="px-3 py-1 bg-gray-100 text-accent rounded-full text-xs font-semibold uppercase tracking-wide"
               >
                 {{ tag }}
               </span>
@@ -101,13 +94,13 @@
             <!-- Action Buttons -->
             <div class="flex gap-3">
               <button
-                class="flex-1 py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-tigers_eye-300 hover:text-tigers_eye-600 hover:bg-tigers_eye-50 transition-all duration-300 font-semibold"
+                class="flex-1 py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-accent hover:text-accent hover:bg-accent-10 transition-all duration-300 font-semibold"
               >
                 View Details
               </button>
               <button
                 @click="goToBooking"
-                class="flex-1 py-3 px-4 bg-gradient-to-r from-tigers_eye-600 to-dark_moss_green-600 text-white rounded-xl hover:from-tigers_eye-700 hover:to-dark_moss_green-700 transition-all duration-300 font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+                class="flex-1 py-3 px-4 btn-primary text-white rounded-xl hover:shadow-xl transition-all duration-300 font-semibold shadow-lg hover:scale-105"
               >
                 Book Now
               </button>
@@ -115,9 +108,7 @@
           </div>
 
           <!-- Decorative Element -->
-          <div
-            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-tigers_eye-500 via-dark_moss_green-500 to-brown-500"
-          ></div>
+          <div class="absolute top-0 left-0 w-full h-1 bg-accent"></div>
         </div>
       </div>
 
@@ -129,7 +120,7 @@
             Let our concierge help you find the perfect accommodation
           </p>
           <button
-            class="bg-gradient-to-r from-tigers_eye-600 to-dark_moss_green-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-tigers_eye-700 hover:to-dark_moss_green-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+            class="bg-accent text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Contact Concierge
           </button>

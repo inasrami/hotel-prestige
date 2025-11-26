@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
+  <div class="min-h-screen bg-gray-50">
     <!-- Navigation -->
     <Navbar />
 

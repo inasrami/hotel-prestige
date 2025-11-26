@@ -1,8 +1,5 @@
 <template>
-  <section
-    id="amenities"
-    class="section-padding bg-gradient-to-br from-gray-50 to-dark_moss_green-50"
-  >
+  <section id="amenities" class="section-padding bg-gray-50">
     <div class="container-custom">
       <!-- Header -->
       <div class="text-center mb-16">

@@ -8,9 +8,7 @@
         :key="s.title"
         class="p-6 rounded-xl shadow-md bg-white"
       >
-        <span class="material-symbols-outlined text-5xl text-dark_moss_green-400">{{
-          s.icon
-        }}</span>
+        <span class="material-symbols-outlined text-5xl text-muted">{{ s.icon }}</span>
         <h3 class="text-xl font-serif mt-4">{{ s.title }}</h3>
         <p class="text-gray-600">{{ s.desc }}</p>
       </div>

@@ -4,7 +4,10 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+      data-hero-theme="dark"
+    >
       <div
         class="absolute inset-0 bg-cover bg-center"
         style="
@@ -16,7 +19,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <div data-aos="fade-up" data-aos-duration="1000">
           <span
-            class="inline-block px-4 py-2 bg-tigers_eye-500/20 backdrop-blur-sm border border-tigers_eye-500/30 rounded-full text-tigers_eye-300 text-sm font-semibold mb-6"
+            class="inline-block px-4 py-2 bg-accent-10 backdrop-blur-sm border border-accent-10 rounded-full text-accent text-sm font-semibold mb-6"
           >
             Our Story
           </span>
@@ -50,15 +53,15 @@
             </p>
             <div class="grid grid-cols-3 gap-8 text-center">
               <div>
-                <div class="text-3xl font-bold text-dark_moss_green-600 mb-2">50+</div>
+                <div class="text-3xl font-bold text-muted mb-2">50+</div>
                 <div class="text-gray-600">Luxury Suites</div>
               </div>
               <div>
-                <div class="text-3xl font-bold text-dark_moss_green-600 mb-2">15+</div>
+                <div class="text-3xl font-bold text-muted mb-2">15+</div>
                 <div class="text-gray-600">Years Experience</div>
               </div>
               <div>
-                <div class="text-3xl font-bold text-dark_moss_green-600 mb-2">98%</div>
+                <div class="text-3xl font-bold text-muted mb-2">98%</div>
                 <div class="text-gray-600">Guest Satisfaction</div>
               </div>
             </div>
@@ -75,7 +78,7 @@
     </section>
 
     <!-- Values Section -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
+    <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-16">
           <h2 class="font-serif text-4xl font-bold text-gray-900 mb-6">
@@ -95,7 +98,7 @@
             class="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
           >
             <div
-              class="w-16 h-16 bg-gradient-to-br from-tigers_eye-500 to-dark_moss_green-500 rounded-2xl flex items-center justify-center mx-auto mb-6"
+              class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-6"
             >
               <span class="text-2xl text-white">{{ value.icon }}</span>
             </div>
@@ -106,7 +109,7 @@
       </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Team Section (simplified) -->
     <section class="section-padding bg-white">
       <div class="container-custom">
         <div class="text-center mb-16">
@@ -114,32 +117,10 @@
             Meet Our <span class="text-gradient">Team</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            The passionate professionals behind your exceptional experience
+            Our dedicated team of hospitality professionals is committed to delivering a refined and
+            personalized experience for every guest. From front desk to concierge and culinary
+            experts, we work together to ensure every detail is cared for.
           </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <div
-            v-for="(member, index) in team"
-            :key="member.name"
-            :data-aos="'fade-up'"
-            :data-aos-delay="index * 100"
-            class="text-center group"
-          >
-            <div class="relative mb-6">
-              <img
-                :src="member.image"
-                :alt="member.name"
-                class="w-48 h-48 rounded-full mx-auto object-cover shadow-lg group-hover:shadow-xl transition-all duration-300"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-tigers_eye-500/20 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              ></div>
-            </div>
-            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-2">{{ member.name }}</h3>
-            <p class="text-dark_moss_green-600 font-medium mb-3">{{ member.position }}</p>
-            <p class="text-gray-600 text-sm">{{ member.description }}</p>
-          </div>
         </div>
       </div>
     </section>
@@ -170,27 +151,5 @@ const values = [
   },
 ]
 
-const team = [
-  {
-    name: 'Elena Marković',
-    position: 'General Manager',
-    description:
-      'With over 15 years in luxury hospitality, Elena ensures every guest receives exceptional service.',
-    image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
-  },
-  {
-    name: 'Arben Krasniqi',
-    position: 'Head Concierge',
-    description:
-      "Arben's local expertise and attention to detail make every guest experience truly memorable.",
-    image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
-  },
-  {
-    name: 'Sofia Petrov',
-    position: 'Executive Chef',
-    description:
-      'Sofia brings international culinary excellence with a passion for local Kosovo flavors.',
-    image: 'https://images.pexels.com/photos/1181424/pexels-photo-1181424.jpeg',
-  },
-]
+// team array removed for simplified about page
 </script>

@@ -4,7 +4,10 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+      data-hero-theme="dark"
+    >
       <div
         class="absolute inset-0 bg-cover bg-center"
         style="
@@ -16,7 +19,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <div data-aos="fade-up" data-aos-duration="1000">
           <span
-            class="inline-block px-4 py-2 bg-tigers_eye-500/20 backdrop-blur-sm border border-tigers_eye-500/30 rounded-full text-tigers_eye-300 text-sm font-semibold mb-6"
+            class="inline-block px-4 py-2 bg-accent-10 backdrop-blur-sm border border-accent-10 rounded-full text-accent text-sm font-semibold mb-6"
           >
             Wellness & Relaxation
           </span>
@@ -48,11 +51,11 @@
             :key="treatment.name"
             :data-aos="'fade-up'"
             :data-aos-delay="index * 100"
-            class="bg-gradient-to-br from-gray-50 to-dark_moss_green-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-500"
+            class="bg-gray-50 rounded-2xl p-8 hover:shadow-xl transition-all duration-500"
           >
             <div class="flex items-start space-x-6">
               <div
-                class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-tigers_eye-500 to-dark_moss_green-500 rounded-2xl flex items-center justify-center"
+                class="flex-shrink-0 w-16 h-16 bg-accent rounded-2xl flex items-center justify-center"
               >
                 <span class="text-2xl text-white">{{ treatment.icon }}</span>
               </div>
@@ -62,7 +65,7 @@
                     {{ treatment.name }}
                   </h3>
                   <div class="text-right">
-                    <div class="text-xl font-bold text-tigers_eye-600">${{ treatment.price }}</div>
+                    <div class="text-xl font-bold text-accent">${{ treatment.price }}</div>
                     <div class="text-sm text-gray-500">{{ treatment.duration }}</div>
                   </div>
                 </div>
@@ -71,7 +74,7 @@
                   <span
                     v-for="benefit in treatment.benefits"
                     :key="benefit"
-                    class="px-3 py-1 bg-tigers_eye-100 text-tigers_eye-700 rounded-full text-sm font-medium"
+                    class="px-3 py-1 bg-accent-10 text-accent rounded-full text-sm font-medium"
                   >
                     {{ benefit }}
                   </span>
@@ -85,7 +88,7 @@
     </section>
 
     <!-- Facilities -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
+    <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-16">
           <h2 class="font-serif text-4xl font-bold text-gray-900 mb-6">
@@ -116,11 +119,7 @@
                   :key="feature"
                   class="flex items-center text-sm text-gray-600"
                 >
-                  <svg
-                    class="w-4 h-4 text-tigers_eye-500 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg class="w-4 h-4 text-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -155,18 +154,18 @@
             :data-aos="'fade-up'"
             :data-aos-delay="index * 100"
             class="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden"
-            :class="{ 'ring-2 ring-tigers_eye-500': pkg.popular }"
+            :class="{ 'ring-2 ring-accent': pkg.popular }"
           >
             <div
               v-if="pkg.popular"
-              class="absolute top-4 right-4 bg-tigers_eye-500 text-white px-3 py-1 rounded-full text-sm font-semibold"
+              class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-semibold"
             >
               Most Popular
             </div>
             <div class="p-8">
               <div class="text-center mb-6">
                 <h3 class="font-serif text-2xl font-bold text-gray-900 mb-2">{{ pkg.name }}</h3>
-                <div class="text-3xl font-bold text-tigers_eye-600 mb-1">${{ pkg.price }}</div>
+                <div class="text-3xl font-bold text-accent mb-1">${{ pkg.price }}</div>
                 <div class="text-gray-500">{{ pkg.duration }}</div>
               </div>
               <p class="text-gray-600 mb-6 text-center">{{ pkg.description }}</p>
@@ -176,11 +175,7 @@
                   :key="service"
                   class="flex items-center text-gray-700"
                 >
-                  <svg
-                    class="w-5 h-5 text-tigers_eye-500 mr-3"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg class="w-5 h-5 text-accent mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fill-rule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"

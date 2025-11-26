@@ -4,7 +4,10 @@
     <Navbar />
 
     <!-- Hero Section -->
-    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+    <section
+      class="relative min-h-[70vh] flex items-center justify-center overflow-hidden"
+      data-hero-theme="dark"
+    >
       <div
         class="absolute inset-0 bg-cover bg-center"
         style="
@@ -16,7 +19,7 @@
       <div class="relative z-10 text-center text-white px-6">
         <div data-aos="fade-up" data-aos-duration="1000">
           <span
-            class="inline-block px-4 py-2 bg-tigers_eye-500/20 backdrop-blur-sm border border-tigers_eye-500/30 rounded-full text-tigers_eye-300 text-sm font-semibold mb-6"
+            class="inline-block px-4 py-2 bg-accent-10 backdrop-blur-sm border border-accent-10 rounded-full text-accent text-sm font-semibold mb-6"
           >
             Memorable Occasions
           </span>
@@ -79,7 +82,7 @@
     </section>
 
     <!-- Venues -->
-    <section class="section-padding bg-gradient-to-br from-gray-50 to-dark_moss_green-50">
+    <section class="section-padding bg-gray-50">
       <div class="container-custom">
         <div class="text-center mb-16">
           <h2 class="font-serif text-4xl font-bold text-gray-900 mb-6">
@@ -105,11 +108,11 @@
 
               <div class="grid grid-cols-2 gap-4 mb-4">
                 <div class="text-center p-3 bg-gray-50 rounded-lg">
-                  <div class="text-lg font-bold text-dark_moss_green-600">{{ venue.capacity }}</div>
+                  <div class="text-lg font-bold text-muted">{{ venue.capacity }}</div>
                   <div class="text-sm text-gray-600">Guests</div>
                 </div>
                 <div class="text-center p-3 bg-gray-50 rounded-lg">
-                  <div class="text-lg font-bold text-dark_moss_green-600">{{ venue.size }}</div>
+                  <div class="text-lg font-bold text-muted">{{ venue.size }}</div>
                   <div class="text-sm text-gray-600">sq ft</div>
                 </div>
               </div>
@@ -160,10 +163,10 @@
             :key="service.name"
             :data-aos="'fade-up'"
             :data-aos-delay="index * 100"
-            class="text-center p-6 bg-gradient-to-br from-gray-50 to-dark_moss_green-50 rounded-2xl hover:shadow-lg transition-all duration-300"
+            class="text-center p-6 bg-gray-50 rounded-2xl hover:shadow-lg transition-all duration-300"
           >
             <div
-              class="w-16 h-16 bg-gradient-to-br from-tigers_eye-500 to-dark_moss_green-500 rounded-2xl flex items-center justify-center mx-auto mb-4"
+              class="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4"
             >
               <span class="text-2xl text-white">{{ service.icon }}</span>
             </div>
@@ -175,9 +178,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section
-      class="section-padding bg-gradient-to-br from-gray-900 via-tigers_eye-900 to-dark_moss_green-900 text-white"
-    >
+    <section class="section-padding bg-gray-900 text-white">
       <div class="container-custom text-center">
         <div data-aos="fade-up" data-aos-duration="1000">
           <h2 class="font-serif text-4xl font-bold mb-6">
