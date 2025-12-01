@@ -1,129 +1,73 @@
 <template>
-  <section id="rooms" class="py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Header Section -->
-      <div class="text-center mb-20">
-        <div class="inline-block">
-          <span class="text-sm font-semibold text-accent uppercase tracking-wider mb-2 block">
-            Accommodations
-          </span>
-          <h2 class="text-5xl font-serif mb-6 text-gray-900 leading-tight">
-            Luxury Suites & Villas
-          </h2>
-          <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
-          <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Each accommodation is thoughtfully designed to provide the ultimate in comfort, luxury,
-            and breathtaking views.
+  <section id="rooms" class="section-padding bg-white">
+    <div class="container-custom px-6">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16">
+        <div class="max-w-2xl" data-aos="fade-right">
+          <span class="text-accent text-sm font-bold uppercase tracking-widest mb-2 block"
+            >Accommodations</span
+          >
+          <h2 class="text-4xl md:text-5xl font-serif text-primary mb-6">Suites & Villas</h2>
+          <p class="text-gray-600 font-light leading-relaxed">
+            Designed with a modern aesthetic and natural materials, our spaces offer a serene
+            retreat from the world.
           </p>
         </div>
+        <button
+          @click="goToBooking"
+          class="hidden md:block btn-secondary mt-6 md:mt-0"
+          data-aos="fade-left"
+        >
+          View All Rates
+        </button>
       </div>
 
-      <!-- Rooms Grid -->
-      <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+      <div class="grid lg:grid-cols-3 gap-8">
         <div
-          data-aos="fade-up"
-          data-aos-duration="800"
           v-for="(room, index) in rooms"
           :key="room.title"
-          :data-aos-delay="100 * (index + 1)"
-          class="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-2"
+          class="group"
+          data-aos="fade-up"
+          :data-aos-delay="index * 100"
         >
-          <!-- Image Container -->
-          <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden mb-6">
             <img
               :src="room.image"
               :alt="room.title"
-              class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
+              class="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"
             ></div>
-
-            <!-- Best Value Badge -->
-            <div
-              v-if="room.bestValue"
-              class="absolute top-6 right-6 bg-yellow-400 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg"
-            >
-              ⭐ Best Value
-            </div>
-
-            <!-- Price Overlay -->
-            <div
-              class="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg"
-            >
-              <div class="text-3xl font-bold text-gray-900">${{ room.price }}</div>
-              <div class="text-sm text-gray-500 font-medium">per night</div>
-            </div>
           </div>
 
-          <!-- Content -->
-          <div class="p-8">
-            <h3
-              class="text-2xl font-serif text-gray-900 mb-4 group-hover:text-accent transition-colors"
-            >
-              {{ room.title }}
-            </h3>
+          <div class="pr-4">
+            <div class="flex justify-between items-baseline mb-3">
+              <h3 class="text-2xl font-serif text-primary">{{ room.title }}</h3>
+              <span class="text-lg font-medium text-gray-500">${{ room.price }}</span>
+            </div>
 
-            <p class="text-gray-600 mb-6 leading-relaxed line-clamp-3">
+            <p class="text-gray-600 mb-6 text-sm leading-relaxed line-clamp-2">
               {{ room.description }}
             </p>
 
-            <!-- Amenities Grid -->
-            <div class="grid grid-cols-2 gap-3 mb-6">
+            <div class="flex gap-4 mb-6 text-gray-500">
               <div
                 v-for="amenity in room.amenities"
                 :key="amenity.name"
-                class="flex items-center text-sm text-gray-700 bg-gray-50 rounded-lg px-3 py-2"
+                class="flex items-center gap-2"
+                :title="amenity.name"
               >
-                <span class="text-lg mr-2">{{ amenity.icon }}</span>
-                <span class="font-medium">{{ amenity.name }}</span>
+                <span class="material-symbols-outlined text-xl">{{ amenity.icon }}</span>
               </div>
             </div>
 
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-2 mb-8">
-              <span
-                v-for="tag in room.tags"
-                :key="tag"
-                class="px-3 py-1 bg-gray-100 text-accent rounded-full text-xs font-semibold uppercase tracking-wide"
-              >
-                {{ tag }}
-              </span>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="flex gap-3">
-              <button
-                class="flex-1 py-3 px-4 border-2 border-gray-200 text-gray-700 rounded-xl hover:border-accent hover:text-accent hover:bg-accent-10 transition-all duration-300 font-semibold"
-              >
-                View Details
-              </button>
-              <button
-                @click="goToBooking"
-                class="flex-1 py-3 px-4 btn-primary text-white rounded-xl hover:shadow-xl transition-all duration-300 font-semibold shadow-lg hover:scale-105"
-              >
-                Book Now
-              </button>
-            </div>
+            <button
+              @click="goToBooking"
+              class="text-sm uppercase tracking-widest font-medium text-primary border-b border-gray-300 hover:border-primary pb-1 transition-all"
+            >
+              Book This Room
+            </button>
           </div>
-
-          <!-- Decorative Element -->
-          <div class="absolute top-0 left-0 w-full h-1 bg-accent"></div>
-        </div>
-      </div>
-
-      <!-- Bottom CTA -->
-      <div class="text-center mt-20">
-        <div class="inline-block bg-white rounded-2xl shadow-lg p-8">
-          <h3 class="text-2xl font-serif text-gray-900 mb-4">Can't decide?</h3>
-          <p class="text-gray-600 mb-6">
-            Let our concierge help you find the perfect accommodation
-          </p>
-          <button
-            class="bg-accent text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            Contact Concierge
-          </button>
         </div>
       </div>
     </div>
@@ -132,10 +76,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const route = useRoute()
 
 function goToBooking() {
   router.push('/bookingpage')
@@ -145,98 +88,37 @@ const rooms = ref([
   {
     title: 'Ocean View Suite',
     price: 450,
-    description:
-      'Luxurious suite with panoramic ocean views, private balcony, and premium amenities. Wake up to breathtaking sunrises and enjoy the sound of waves from your private sanctuary.',
+    description: 'Panoramic ocean views with a private balcony and modern furnishings.',
     image: 'https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg',
-    bestValue: true,
     amenities: [
-      { name: 'Ocean View', icon: '🌊' },
-      { name: 'Private Balcony', icon: '🏖️' },
-      { name: 'King Bed', icon: '🛏️' },
-      { name: 'Mini Bar', icon: '🍷' },
+      { name: 'View', icon: 'water' }, 
+      { name: 'King Bed', icon: 'king_bed' },
+      { name: 'Wifi', icon: 'wifi' },
     ],
-    tags: ['Popular', 'Ocean View', 'Balcony'],
   },
   {
     title: 'Garden Villa',
     price: 380,
     description:
-      'Spacious villa surrounded by tropical gardens with private pool and outdoor dining area. Perfect for families or couples seeking privacy and tranquility in a natural setting.',
+      'A secluded sanctuary surrounded by lush tropical gardens and private pool access.',
     image: 'https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg',
-    bestValue: false,
     amenities: [
-      { name: 'Private Pool', icon: '🏊' },
-      { name: 'Garden View', icon: '🌺' },
-      { name: 'Outdoor Dining', icon: '🍽️' },
-      { name: 'WiFi', icon: '📶' },
+      { name: 'Pool', icon: 'pool' },
+      { name: 'Garden', icon: 'yard' },
+      { name: 'Dining', icon: 'restaurant' },
     ],
-    tags: ['Private Pool', 'Garden', 'Spacious'],
   },
   {
     title: 'Presidential Suite',
     price: 750,
     description:
-      'The ultimate luxury experience with butler service, private chef, and exclusive amenities. Indulge in unparalleled comfort with personalized service and premium facilities.',
+      'The ultimate luxury experience featuring expansive living areas and butler service.',
     image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg',
-    bestValue: false,
     amenities: [
-      { name: 'Butler Service', icon: '🤵' },
-      { name: 'Private Chef', icon: '👨‍🍳' },
-      { name: 'Jacuzzi', icon: '🛁' },
-      { name: 'Champagne', icon: '🥂' },
+      { name: 'Service', icon: 'room_service' },
+      { name: 'Bar', icon: 'wine_bar' },
+      { name: 'Bath', icon: 'bathtub' },
     ],
-    tags: ['Luxury', 'Butler', 'Exclusive'],
   },
 ])
 </script>
-
-<style scoped>
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-/* Custom scrollbar for better aesthetics */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #bc6c25, #606c38);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #a0561f, #283618);
-}
-
-@media (hover: hover) {
-  .group:hover .absolute.inset-0 {
-    background: linear-gradient(135deg, rgba(188, 108, 37, 0.08), rgba(96, 108, 56, 0.08));
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .grid.lg\\:grid-cols-3 {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .text-5xl {
-    font-size: 2.5rem;
-  }
-
-  .py-24 {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
-}
-</style>

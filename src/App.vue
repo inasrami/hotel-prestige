@@ -1,5 +1,6 @@
 <template>
   <div class="font-sans text-gray-800">
+    <Navbar />
     <router-view />
     <Footer />
   </div>

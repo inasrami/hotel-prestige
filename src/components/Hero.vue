@@ -1,142 +1,108 @@
 <template>
-  <section class="relative min-h-screen flex flex-col overflow-hidden" data-hero-theme="dark">
-    <!-- Background Video/Image -->
+  <section
+    id="home-hero"
+    class="relative min-h-screen flex flex-col justify-center overflow-hidden"
+  >
+    <!-- Background  -->
     <div class="absolute inset-0">
       <div
-        class="absolute inset-0 bg-cover bg-center"
+        class="absolute inset-0 bg-cover bg-center transform scale-105 animate-subtle-zoom"
         style="
           background-image: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg');
         "
       ></div>
-      <div class="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
-      ></div>
+      <div class="absolute inset-0 bg-black/30"></div>
     </div>
 
-    <!-- Navigation -->
-    <Navbar />
-
-    <!-- Hero Content -->
-    <div class="relative z-10 flex-1 flex items-center justify-center text-center px-6">
-      <div class="max-w-5xl mx-auto">
-        <div data-aos="fade-up" data-aos-duration="1000">
-          <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 text-shadow-lg">
-            Experience
-            <span class="text-accent block">Prestige</span>
-          </h1>
-
-          <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Where luxury meets comfort in the heart of paradise. Discover unparalleled elegance and
-            world-class hospitality.
-          </p>
-
-          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button @click="scrollToRooms" class="btn-primary text-lg px-10 py-4">
-              Explore Rooms
-            </button>
-            <button @click="goToBooking" class="btn-secondary text-lg px-10 py-4">
-              Book Your Stay
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Booking Widget -->
-    <div class="relative z-10 pb-8">
-      <div class="container-custom">
-        <div
-          data-aos="fade-up"
-          data-aos-delay="300"
-          class="glass-effect rounded-2xl p-6 mx-6 shadow-2xl border border-white/20"
+    <!-- Hero -->
+    <div class="relative z-10 text-center px-6 max-w-5xl mx-auto mt-16">
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <p class="text-white uppercase tracking-[0.2em] text-sm md:text-base mb-4 opacity-90">
+          Welcome to Prizren
+        </p>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-8 leading-tight">
+          Hotel Prestige
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-100 mb-10 max-w-2xl mx-auto font-light leading-relaxed"
         >
-          <form class="grid grid-cols-1 md:grid-cols-5 gap-4">
-            <div class="space-y-2">
-              <label class="block text-white text-sm font-medium">Check-in</label>
-              <input
-                v-model="checkIn"
-                type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus-border-accent transition-all duration-300"
-              />
-            </div>
+          A sanctuary of elegance and refined hospitality in the heart of the historic city.
+        </p>
 
-            <div class="space-y-2">
-              <label class="block text-white text-sm font-medium">Check-out</label>
-              <input
-                v-model="checkOut"
-                type="date"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus-border-accent transition-all duration-300"
-              />
-            </div>
-
-            <div class="space-y-2">
-              <label class="block text-white text-sm font-medium">Guests</label>
-              <input
-                v-model.number="guests"
-                type="number"
-                min="1"
-                max="8"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-300 focus:bg-white/20 focus-border-accent transition-all duration-300"
-              />
-            </div>
-
-            <div class="space-y-2">
-              <label class="block text-white text-sm font-medium">Room Type</label>
-              <select
-                v-model="room"
-                class="w-full px-4 py-3 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white focus:bg-white/20 focus-border-accent transition-all duration-300"
-              >
-                <option value="" class="text-gray-900">Select Room</option>
-                <option value="Ocean View Suite" class="text-gray-900">Ocean View Suite</option>
-                <option value="Garden Villa" class="text-gray-900">Garden Villa</option>
-                <option value="Presidential Suite" class="text-gray-900">Presidential Suite</option>
-              </select>
-            </div>
-
-            <div class="flex items-end">
-              <button type="button" @click="handleBooking" class="w-full btn-primary">
-                Check Availability
-              </button>
-            </div>
-          </form>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <button
+            @click="goToBooking"
+            class="px-8 py-4 bg-white text-primary min-w-[200px] uppercase tracking-widest text-sm font-medium hover:bg-gray-100 transition-colors"
+          >
+            Book Your Stay
+          </button>
+          <button
+            @click="scrollToRooms"
+            class="px-8 py-4 bg-transparent border border-white text-white min-w-[200px] uppercase tracking-widest text-sm font-medium hover:bg-white hover:text-primary transition-all"
+          >
+            View Suites
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-      <div class="animate-bounce">
-        <svg class="w-6 h-6 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
-        </svg>
+    <!-- Simplified Booking Widget -->
+    <div
+      class="absolute bottom-0 left-0 right-0 z-20 bg-white/95 backdrop-blur-md border-t border-white/20 py-6 hidden lg:block"
+    >
+      <div class="container-custom px-6">
+        <form @submit.prevent="handleBooking" class="flex items-end justify-center gap-8">
+          <div class="flex flex-col">
+            <label class="text-xs uppercase tracking-wider text-gray-500 mb-2">Check In</label>
+            <input
+              v-model="checkIn"
+              type="date"
+              class="bg-transparent border-0 border-b border-gray-300 focus:border-accent focus:ring-0 p-0 text-primary font-medium"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label class="text-xs uppercase tracking-wider text-gray-500 mb-2">Check Out</label>
+            <input
+              v-model="checkOut"
+              type="date"
+              class="bg-transparent border-0 border-b border-gray-300 focus:border-accent focus:ring-0 p-0 text-primary font-medium"
+            />
+          </div>
+          <div class="flex flex-col w-32">
+            <label class="text-xs uppercase tracking-wider text-gray-500 mb-2">Guests</label>
+            <select
+              v-model="guests"
+              class="bg-transparent border-0 border-b border-gray-300 focus:border-accent focus:ring-0 p-0 text-primary font-medium"
+            >
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4+ Guests</option>
+            </select>
+          </div>
+          <button
+            type="submit"
+            class="text-accent hover:text-primary transition-colors uppercase tracking-widest text-sm font-bold pb-1 border-b border-accent hover:border-primary"
+          >
+            Check Availability
+          </button>
+        </form>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-import Navbar from './Navbar.vue'
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-
 const checkIn = ref('')
 const checkOut = ref('')
-const guests = ref(2)
-const room = ref('')
+const guests = ref('2')
 
 function scrollToRooms() {
-  const roomsSection = document.getElementById('rooms')
-  if (roomsSection) {
-    roomsSection.scrollIntoView({ behavior: 'smooth' })
-  }
+  document.getElementById('rooms')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 function goToBooking() {
@@ -144,47 +110,24 @@ function goToBooking() {
 }
 
 function handleBooking() {
-  if (!room.value) {
-    alert('Please select a room type.')
-    return
-  }
-  if (!checkIn.value || !checkOut.value) {
-    alert('Please select both check-in and check-out dates.')
-    return
-  }
-
-  const inDate = new Date(checkIn.value)
-  const outDate = new Date(checkOut.value)
-  if (outDate <= inDate) {
-    alert('Check-out must be after check-in.')
-    return
-  }
-
   router.push({
     path: '/bookingpage',
-    query: {
-      checkIn: checkIn.value,
-      checkOut: checkOut.value,
-      guests: String(guests.value),
-      room: room.value,
-    },
+    query: { checkIn: checkIn.value, checkOut: checkOut.value, guests: guests.value },
   })
 }
 </script>
 
 <style scoped>
-/* Custom date input styling */
-input[type='date']::-webkit-calendar-picker-indicator {
-  filter: invert(1);
-  cursor: pointer;
+.animate-subtle-zoom {
+  animation: subtleZoom 20s infinite alternate;
 }
 
-/* Custom select arrow */
-select {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  background-position: right 0.75rem center;
-  background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  padding-right: 2.5rem;
+@keyframes subtleZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
 </style>
