@@ -2,24 +2,31 @@
 
 <div align="center">
   <p><i>"Luxury Redefined."</i></p>
-  <p>A modern web application for a premier luxury hotel in the heart of Prizren.</p>
+  <p>A modern web application concept for a fictional luxury hotel.</p>
 </div>
 
+> **⚠️ DISCLAIMER: Fictional Project**
+>
+> **This hotel does not exist.**
+> * This project is a design and development concept created for portfolio purposes.
+> * Any resemblance to real hotels, businesses, or actual places is purely coincidental and unintentional.
+
+---
 
 ## ✦ About The Project
 
-**Hotel Prestige** is a responsive web application designed to capture the elegance and timeless luxury of the hotel. Located in the historic city of Prizren, the digital experience mirrors the hotel's philosophy of "simplicity, silence, and the subtle art of anticipation".
+**Hotel Prestige** is a responsive web application designed to demonstrate a high-end hospitality platform. The project envisions a luxury sanctuary located in the historic city of Prizren, focusing on elegance, silence, and the "subtle art of anticipation".
 
 ### 🏨 Key Experiences
-* **Accommodation:** Showcases 50+ suites with a focus on comfort and elegance.
+* **Accommodation:** A showcase of luxury suites featuring detailed imagery and amenities.
 * **Culinary Arts:** Dedicated sections for *The Prestige Room* (fine dining) and *The Terrace* (casual alfresco dining).
-* **Events & Meetings:** Information on hosting conferences and special occasions.
-* **Wellness:** A dedicated Spa section promoting relaxation and rejuvenation.
-* **Booking Integration:** A streamlined "Book Now" flow accessible throughout the user journey.
+* **Wellness & Spa:** A relaxation-focused section highlighting thermal waters and treatments.
+* **Events:** Information on hosting conferences and weddings.
+* **Booking System:** A streamlined interface for checking availability and reserving rooms.
 
 ## 🛠 Tech Stack
 
-Built with a modern Vue 3 ecosystem to ensure a smooth, premium feel.
+Built with a modern Vue 3 ecosystem to ensure a premium, smooth user experience.
 
 ![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -29,24 +36,24 @@ Built with a modern Vue 3 ecosystem to ensure a smooth, premium feel.
 * **Framework:** [Vue 3](https://vuejs.org/) (Composition API)
 * **Build Tool:** [Vite](https://vitejs.dev/)
 * **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **Motion & Interactions:**
-    * [Motion V](https://motion.dev/) for fluid component animations.
-    * [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll) for entrance effects.
-* **HTTP Client:** [Axios](https://axios-http.com/) for data fetching.
+* **Animations:**
+    * [Motion One (Motion-V)](https://motion.dev/) for fluid component transitions.
+    * [AOS](https://michalsnik.github.io/aos/) (Animate On Scroll) for scroll-triggered entrance effects.
+* **HTTP Client:** [Axios](https://axios-http.com/).
 
 ## ✨ Features
 
-* **Dynamic Navigation:** A reactive navbar that adapts its appearance based on scroll position and route, ensuring readability over different backgrounds.
-* **Mobile First:** Fully responsive mobile menu with backdrop blur effects and smooth transitions.
-* **Interactive Hero Sections:** Immersive imagery and typography that convey the brand's history and prestige.
-* **Smooth Scrolling:** Global smooth scroll behavior enabled for a seamless browsing experience.
+* **Adaptive Navigation:** A smart navbar that changes transparency and color based on scroll position and route.
+* **Immersive Visuals:** Full-screen hero sections with overlay text to convey the brand's atmosphere.
+* **Responsive Design:** Mobile-first approach with a custom backdrop-blur mobile menu.
+* **Smooth Interactions:** Global smooth scrolling and refined hover states throughout the application.
 
 ## 🚀 Getting Started
 
 Follow these steps to set up the project locally.
 
 ### Prerequisites
-* Node.js (v20.19.0 or higher)
+* Node.js (v20.19.0 or higher recommended)
 * npm or yarn
 
 ### Installation
@@ -77,4 +84,4 @@ npm run build
 👤 Author
 Inas Rami
 
-Developed by Inas Rami as a voluntary initiative.
+Concept, Design, and Development by Inas Rami.
