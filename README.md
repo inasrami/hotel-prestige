@@ -5,13 +5,6 @@
   <p>A modern web application for a premier luxury hotel in the heart of Prizren.</p>
 </div>
 
-> **⚠️ DISCLAIMER: Voluntary Project**
->
-> This project was built **voluntarily** for the existing Hotel Prestige.
-> * **Ownership:** The hotel retains all rights to the brand, content, and intellectual property associated with "Hotel Prestige".
-> * **Status:** This repository serves strictly as a portfolio piece. I will immediately delete this repository and take down any live demos upon request from the hotel management.
-
----
 
 ## ✦ About The Project
 
